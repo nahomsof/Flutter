@@ -6,7 +6,9 @@ class App0301 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Material(
-        child: Text("Hello world!", textScaleFactor: 2.0),
+        child: Center(
+          child: Text("Hello world!", textScaleFactor: 2.0),
+        ),
       ),
     );
   }
