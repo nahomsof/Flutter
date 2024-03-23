@@ -11,6 +11,7 @@ class App0307 extends StatelessWidget {
             ),
             body: Center(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "Hello world!",
