@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
-main() => runApp(getter());
+main() => runApp(app());
 
-class getter extends StatelessWidget {
+class app extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("My First Image"),
-        ),
-        body: Center(
-          child: Image.asset('assets/beki.jpeg'),
-        ),
-      ),
-    );
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text("This shoud be image: "),
+            ),
+            body: Center(
+              child: Image.asset("assets.beki.jpeg"),
+            )));
   }
 }
