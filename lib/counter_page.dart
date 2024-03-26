@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/count.dart';
-import 'package:flutter_application_1/counter_page.dart';
 
 class CounterPage extends StatefulWidget {
   _CounterPageState createState() => _CounterPageState();
@@ -17,7 +16,7 @@ class _CounterPageState extends State<CounterPage> {
         body: Center(
           child: Count(
             count: count,
-            onCountChange: (int val) => ,
+            onCountChange: (int val) =>   ,
             oncountSelected: () => print("Selected teh counter"),
           ),
         ));

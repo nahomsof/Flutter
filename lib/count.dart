@@ -8,8 +8,10 @@ class Count extends StatelessWidget {
       {required this.count,
       required this.onCountSelected,
       required void Function() oncountSelected, required this.onCountChange});
+      
+        get floatingActionButton => null;
   @override
   Widget build(BuildContext context) {
-    return Row(children: <Widget>[IconButton(),FlatButton(child: Text("$count"),onPressed:() => onCountSelected(),)],)
+    return Row(children: <Widget>[IconButton(icon:const Icon(Icons.add),onPressed:()=>onCountChange(1),), FloatingActionButton(onPressed: onPressed)(child: Text("$count"),onPressed:() => onCountSelected(),)],);
   }
 }
