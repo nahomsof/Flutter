@@ -1,24 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/counter_page.dart';
 
-main() => runApp(App0301());
 
-class App0301 extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text("Adding Widgets"),
-          ),
-          body: const Column(
-            children: [
-              Text(
-                "Hello world!",
-                textScaleFactor: 2.0,
-              ),
-              Text("It's lonely for me inside this phone."),
-              Text("That must be taugh")
-            ],
-          )),
-    );
+main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  Widget build(BuildContext context){
+    return MaterialApp(debugShowCheckedModeBanner: false,
+    title: 'Widget communiation',
+    home: CounterPage(),
   }
 }
