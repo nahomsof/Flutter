@@ -11,12 +11,14 @@ class Firstapp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-            backgroundColor: const Color.fromARGB(255, 14, 8, 24),
+            backgroundColor: Color.fromARGB(255, 124, 72, 131),
             appBar: AppBar(
               backgroundColor: Color.fromARGB(255, 58, 11, 77),
               title: Text(
                 "App for Nothing",
               ),
+              elevation: 100,
+              leading: Icon(Icons.menu),
             ),
             body: Center(
               child: Container(
@@ -28,7 +30,7 @@ class Firstapp extends StatelessWidget {
                   padding: EdgeInsets.all(25),
                   child: Icon(
                     Icons.accessibility_rounded,
-                    color: const Color.fromARGB(255, 51, 47, 47),
+                    color: Color.fromARGB(255, 23, 29, 56),
                     size: 67,
                   )),
             )));
