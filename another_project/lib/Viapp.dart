@@ -12,6 +12,12 @@ class Firstapp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             backgroundColor: const Color.fromARGB(255, 14, 8, 24),
+            appBar: AppBar(
+              backgroundColor: Color.fromARGB(255, 58, 11, 77),
+              title: Text(
+                "App for Nothing",
+              ),
+            ),
             body: Center(
               child: Container(
                   height: 300,
@@ -26,4 +32,5 @@ class Firstapp extends StatelessWidget {
                     size: 67,
                   )),
             )));
+  }
 }
