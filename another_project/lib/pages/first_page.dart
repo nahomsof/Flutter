@@ -11,14 +11,8 @@ class firstpage extends StatelessWidget {
         backgroundColor: Colors.blue,
         title: Text("1st Page"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Go to Seconf page"),
-          onPressed: () {
-            //Navigate to next page
-            Navigator.pushNamed(context, '/secondpage');
-          },
-        ),
+      drawer: Drawer(
+        backgroundColor: Colors.deepPurple[100],
       ),
     );
   }
