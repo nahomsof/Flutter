@@ -1,4 +1,5 @@
 import "package:another_project/pages/first_page.dart";
+import "package:another_project/pages/second_page.dart";
 import "package:flutter/material.dart";
 
 void main() {
@@ -11,6 +12,10 @@ class ex4 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: firstpage(),
+      routes: {
+        '/firstpage': (context) => firstpage(),
+        '/secondpage': (context) => secondpage(),
+      },
     );
   }
 }

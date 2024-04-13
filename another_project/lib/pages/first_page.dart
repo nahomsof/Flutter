@@ -16,8 +16,7 @@ class firstpage extends StatelessWidget {
           child: Text("Go to Seconf page"),
           onPressed: () {
             //Navigate to next page
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => secondpage()));
+            Navigator.pushNamed(context, '/secondpage');
           },
         ),
       ),
