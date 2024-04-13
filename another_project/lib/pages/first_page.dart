@@ -13,6 +13,15 @@ class firstpage extends StatelessWidget {
       ),
       drawer: Drawer(
         backgroundColor: Colors.deepPurple[100],
+        child: Column(
+          children: [
+            DrawerHeader(
+                child: Icon(
+              Icons.ice_skating,
+              size: 88,
+            ))
+          ],
+        ),
       ),
     );
   }
