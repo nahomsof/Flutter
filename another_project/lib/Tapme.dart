@@ -1,4 +1,5 @@
 import "package:another_project/pages/first_page.dart";
+import "package:another_project/pages/first_paged.dart";
 import "package:another_project/pages/home_page.dart";
 import "package:another_project/pages/second_page.dart";
 import "package:another_project/pages/settings_page.dart";
@@ -13,7 +14,7 @@ class ex4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: firstpage(),
+      home: firstpaged(),
       routes: {
         '/firstpage': (context) => const firstpage(),
         '/home_page': (context) => const HomaePage(),
