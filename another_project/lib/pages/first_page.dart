@@ -16,10 +16,20 @@ class firstpage extends StatelessWidget {
         child: Column(
           children: [
             DrawerHeader(
-                child: Icon(
-              Icons.ice_skating,
-              size: 88,
-            ))
+              child: Icon(
+                Icons.ice_skating,
+                size: 88,
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("H O M E"),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("S E  T T I N G"),
+            )
           ],
         ),
       ),
