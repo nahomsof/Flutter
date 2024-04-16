@@ -6,10 +6,8 @@ class HomaePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 20, 94, 30),
-        title: Text("Home Page"),
-      ),
+      appBar: App,
+      body: Center(child: Text("Home page")),
     );
   }
 }
