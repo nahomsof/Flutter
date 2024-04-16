@@ -6,7 +6,6 @@ class HomaePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: App,
       body: Center(child: Text("Home page")),
     );
   }
