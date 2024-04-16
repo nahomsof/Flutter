@@ -15,9 +15,9 @@ class ex4 extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: firstpage(),
       routes: {
-        '/firstpage': (context) => firstpage(),
-        '/home_page': (context) => HomaePage(),
-        '/settings_page': (context) => Settings_Page(),
+        '/firstpage': (context) => const firstpage(),
+        '/home_page': (context) => const HomaePage(),
+        '/settings_page': (context) => const Settings_Page(),
       },
     );
   }

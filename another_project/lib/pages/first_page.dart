@@ -24,6 +24,7 @@ class firstpage extends StatelessWidget {
               leading: Icon(Icons.home),
               title: Text("H O M E"),
               onTap: () {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/home_page');
               },
             ),

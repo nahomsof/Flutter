@@ -5,6 +5,11 @@ class Settings_Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 86, 85, 88),
+        title: Text("Settings Page"),
+      ),
+    );
   }
 }
