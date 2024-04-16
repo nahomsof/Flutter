@@ -1,4 +1,3 @@
-import "package:another_project/pages/second_page.dart";
 import "package:flutter/material.dart";
 
 class firstpage extends StatelessWidget {
@@ -24,11 +23,16 @@ class firstpage extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.home),
               title: Text("H O M E"),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/home_page');
+              },
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text("S E  T T I N G"),
+              onTap: () {
+                Navigator.pushNamed(context, '/settings_page');
+              },
             )
           ],
         ),
