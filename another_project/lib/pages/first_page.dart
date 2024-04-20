@@ -14,7 +14,7 @@ class firstpage extends StatelessWidget {
         backgroundColor: Colors.deepPurple[100],
         child: Column(
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               child: Icon(
                 Icons.add_to_drive,
                 size: 88,
@@ -30,7 +30,7 @@ class firstpage extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.settings),
-              title: Text("S E  T T I N G"),
+              title: const Text("S E  T T I N G"),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/settings_page');
