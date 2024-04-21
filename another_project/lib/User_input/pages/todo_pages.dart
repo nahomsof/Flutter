@@ -33,10 +33,10 @@ class _ToDoPagesState extends State<ToDoPages> {
 
               TextField(
                 controller: mycontroller,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "Type you name.."),
               ),
-              ElevatedButton(onPressed: greetuser, child: Text("Tap"))
+              ElevatedButton(onPressed: greetuser, child: const Text("Tap"))
             ],
           ),
         ),
