@@ -13,7 +13,9 @@ class _ToDoPagesState extends State<ToDoPages> {
   String greetingmessages = "";
   //greet user methods
   void greetuser() {
-    greetingmessages = "Hello, " + mycontroller.text;
+    setState(() {
+      greetingmessages = "Hello, " + mycontroller.text;
+    });
   }
 
   @override
@@ -28,6 +30,7 @@ class _ToDoPagesState extends State<ToDoPages> {
             children: [
               //greeting user messege
               Text(greetingmessages),
+
               TextField(
                 controller: mycontroller,
                 decoration: InputDecoration(
