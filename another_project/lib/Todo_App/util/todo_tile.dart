@@ -10,9 +10,8 @@ class ToDoTile extends StatelessWidget {
       child: Container(
         child: Row(
           children: [
-
             // checkbox
-            Checkbox(value: value, onChanged: onChanged)
+            //Checkbox(value: value, onChanged: onChanged),
             //task name
             Text("Make To Do APP"),
           ],
