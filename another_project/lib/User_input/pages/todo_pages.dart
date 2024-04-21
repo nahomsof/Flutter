@@ -20,15 +20,19 @@ class _ToDoPagesState extends State<ToDoPages> {
     return MaterialApp(
         home: Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: mycontroller,
-              decoration: InputDecoration(border: OutlineInputBorder()),
-            ),
-            ElevatedButton(onPressed: greetuser, child: Text("Tap"))
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: mycontroller,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), hintText: "Type you name.."),
+              ),
+              ElevatedButton(onPressed: greetuser, child: Text("Tap"))
+            ],
+          ),
         ),
       ),
     ));
