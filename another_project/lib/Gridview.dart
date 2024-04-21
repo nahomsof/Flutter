@@ -20,7 +20,7 @@ class ex2 extends StatelessWidget {
                     crossAxisCount: 4),
                 itemBuilder: (context, index) => Container(
                       color: Colors.deepPurple,
-                      margin: EdgeInsets.all(7),
+                      margin: EdgeInsets.all(3),
                     ))));
   }
 }

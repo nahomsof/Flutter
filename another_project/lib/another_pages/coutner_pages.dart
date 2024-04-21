@@ -21,7 +21,15 @@ class _Coutner_PagesState extends State<Coutner_Pages> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("You pushed this button this times: ")],
+          children: [
+            Text("You pushed this button this times: "),
+            Text(
+              _counter.toString(),
+              style: TextStyle(fontSize: 20),
+            ),
+            ElevatedButton(
+                onPressed: _increamentCounter, child: Text("Increment!!"))
+          ],
         ),
       ),
     );
