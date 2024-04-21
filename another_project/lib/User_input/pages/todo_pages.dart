@@ -10,9 +10,10 @@ class ToDoPages extends StatefulWidget {
 
 class _ToDoPagesState extends State<ToDoPages> {
   TextEditingController mycontroller = TextEditingController();
+  String greetingmessages = "";
   //greet user methods
   void greetuser() {
-    print(mycontroller.text);
+    greetingmessages = "Hello, " + mycontroller.text;
   }
 
   @override
@@ -25,6 +26,8 @@ class _ToDoPagesState extends State<ToDoPages> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //greeting user messege
+              Text(greetingmessages),
               TextField(
                 controller: mycontroller,
                 decoration: InputDecoration(
