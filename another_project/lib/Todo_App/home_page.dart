@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
         backgroundColor: Colors.yellow,
+        title: Text('To Do'),
       ),
     );
   }
