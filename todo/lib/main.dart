@@ -1,7 +1,6 @@
-import 'package:another_project/Todo_App/home_page.dart';
-import 'package:another_project/main.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:todo/home_page.dart';
 
 void main() async {
   //init the hive

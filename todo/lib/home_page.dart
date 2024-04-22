@@ -1,8 +1,8 @@
-import 'package:another_project/Todo_App/util/dialog_box.dart';
-import 'package:another_project/Todo_App/util/todo_tile.dart';
-import 'package:another_project/data/database.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:todo/database.dart';
+import 'package:todo/dialog_box.dart';
+import 'package:todo/todo_tile.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
