@@ -15,7 +15,14 @@ class IntroPage extends StatelessWidget {
               'lib/Images/logo.png',
               height: 240,
             ),
-          )
+          ),
+          const SizedBox(
+            height: 48,
+          ),
+          Text(
+            'Just Do It',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
         ],
       ),
     );
