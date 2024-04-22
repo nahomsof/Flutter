@@ -23,6 +23,9 @@ class IntroPage extends StatelessWidget {
             'Just Do It',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
+          const SizedBox(
+            height: 24,
+          ),
         ],
       ),
     );
