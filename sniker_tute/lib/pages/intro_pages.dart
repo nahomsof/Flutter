@@ -26,6 +26,10 @@ class IntroPage extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
+          Text(
+            'Brand new sneakers and custom kicks made with premium quility',
+            style: TextStyle(fontSize: 16, color: Colors.grey),
+          )
         ],
       ),
     );
