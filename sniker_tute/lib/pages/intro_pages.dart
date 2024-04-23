@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:sniker_tute/pages/home_pages.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -10,6 +12,7 @@ class IntroPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -36,14 +39,26 @@ class IntroPage extends StatelessWidget {
             const SizedBox(
               height: 48,
             ),
-            Container(
-              decoration: BoxDecoration(color: Colors.grey[900]),
-              padding: const EdgeInsets.all(25),
-              child: Center(
-                  child: const Text(
-                'Shop Now',
-                style: TextStyle(color: Colors.white),
-              )),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  )),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey[900],
+                    borderRadius: BorderRadius.circular(12)),
+                padding: const EdgeInsets.all(25),
+                child: Center(
+                    child: const Text(
+                  'Shop Now',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16),
+                )),
+              ),
             )
           ],
         ),
