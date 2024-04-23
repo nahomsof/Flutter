@@ -43,7 +43,15 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           )),
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.grey[900],
+        child: Column(
+          children: [
+            //logo
+            DrawerHeader(child: Image.asset('lib/Image/logo.png'))
+          ],
+        ),
+      ),
       body: _pages[_selectedIndex],
     );
   }
