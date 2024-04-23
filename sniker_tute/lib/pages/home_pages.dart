@@ -48,7 +48,24 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             //logo
-            DrawerHeader(child: Image.asset('lib/Image/logo.png'))
+            DrawerHeader(
+                child: Image.asset(
+              'lib/Images/logo.png',
+              color: Colors.white,
+            )),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Divider(
+                color: Colors.grey[800],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: Icon(Icons.home),
+                title: Text("Home"),
+              ),
+            )
           ],
         ),
       ),
