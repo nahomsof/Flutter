@@ -37,9 +37,12 @@ class _HomePageState extends State<HomePage> {
             Icons.menu,
             color: Colors.black,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
         ),
       ),
+      drawer: Drawer(),
       body: _pages[_selectedIndex],
     );
   }
