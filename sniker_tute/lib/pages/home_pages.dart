@@ -30,18 +30,19 @@ class _HomePageState extends State<HomePage> {
         onTabChange: (index) => navigateBottomBar(index),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-        ),
-      ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: Builder(
+            builder: (context) => IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            ),
+          )),
       drawer: Drawer(),
       body: _pages[_selectedIndex],
     );
