@@ -66,16 +66,20 @@ class _ShoppageState extends State<Shoppage> {
         const SizedBox(
           height: 10,
         ),
-        Expanded(child: ListView.builder(itemBuilder: (context, index) {
-          Shoe shoe = Shoe(
-              name: "Air Jordan 1 Low",
-              description: "Cool Shoe",
-              imagePath: 'lib/Images/kor.png',
-              price: "110-140");
-          return ShoeTile(
-            shoe: shoe,
-          );
-        }))
+        Expanded(
+            child: ListView.builder(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  Shoe shoe = Shoe(
+                      name: "Air Jordan 1 Low",
+                      description: "Cool Shoe",
+                      imagePath: 'lib/Images/nike-air-force-1-low-.png',
+                      price: "110-140");
+                  return ShoeTile(
+                    shoe: shoe,
+                  );
+                }))
       ],
     );
   }
