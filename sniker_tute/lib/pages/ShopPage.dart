@@ -72,14 +72,20 @@ class _ShoppageState extends State<Shoppage> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   Shoe shoe = Shoe(
-                      name: "Air Jordan 1 Low",
+                      name: "Air force 1 Low",
                       description: "Cool Shoe",
                       imagePath: 'lib/Images/nike-air-force-1-low-.png',
                       price: "110-140");
                   return ShoeTile(
                     shoe: shoe,
                   );
-                }))
+                })),
+        Padding(
+          padding: const EdgeInsets.only(top: 25, right: 25, left: 25),
+          child: Divider(
+            color: Colors.white,
+          ),
+        )
       ],
     );
   }
