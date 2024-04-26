@@ -1,4 +1,6 @@
-class Shoe {
+import 'package:flutter/material.dart';
+
+class Shoe extends ChangeNotifier {
   final String price;
   final String name;
   final String imagePath;
