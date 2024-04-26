@@ -11,8 +11,8 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.blue[500],
       body: Center(
         child: MyBox(
-          child: MyButton(color: Colors.blue[300], onTop: () {}),
-          color: Colors.blue[200],
+          color: Colors.blue[300],
+          child: MyButton(color: Colors.blue[200], onTop: () {}),
         ),
       ),
     );
