@@ -72,7 +72,7 @@ class _ShoppageState extends State<Shoppage> {
                 ),
                 Expanded(
                     child: ListView.builder(
-                        itemCount: 4,
+                        itemCount: 6,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           Shoe shoe = value.getUsershoe()[index];

@@ -23,10 +23,20 @@ class Cart extends ChangeNotifier {
         imagePath: "lib/Images/lebron-xxi-basketball-shoes(115).png",
         price: "115"),
     Shoe(
-        name: "Calm",
+        name: "Air Jordan High",
         description: "Cool shoe",
-        imagePath: "lib/Images/college-offcourt.png",
-        price: "40"),
+        imagePath: "lib/Images/air-jordan-1-retro-high(180).png",
+        price: "180"),
+    Shoe(
+        name: "stateoffcourt",
+        description: "Cool shoe",
+        imagePath: "lib/Images/tennessee-stateoffcourt-.png",
+        price: "50"),
+    Shoe(
+        name: "Tatum-2-'vortex'",
+        description: "Cool shoe",
+        imagePath: "lib/Images/tatum-2-vortex-basketball(124).png",
+        price: "125"),
   ];
 
   //list of items in  for sele

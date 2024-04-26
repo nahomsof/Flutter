@@ -13,7 +13,7 @@ class ShoeTile extends StatelessWidget {
       margin: EdgeInsets.only(left: 25),
       width: 280,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(12)),
+          color: Colors.grey[100], borderRadius: BorderRadius.circular(12)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -23,9 +23,12 @@ class ShoeTile extends StatelessWidget {
               child: Image.asset(shoe.imagePath)),
 
           //discription
-          Text(
-            shoe.description,
-            style: TextStyle(color: Colors.grey[600]),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              shoe.description,
+              style: TextStyle(color: Colors.grey[600]),
+            ),
           ),
 
           Padding(
