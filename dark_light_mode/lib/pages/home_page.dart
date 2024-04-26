@@ -1,6 +1,8 @@
 import 'package:dark_light_mode/Component/box.dart';
 import 'package:dark_light_mode/Component/button.dart';
+import 'package:dark_light_mode/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,11 +10,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[500],
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: MyBox(
-          color: Colors.blue[300],
-          child: MyButton(color: Colors.blue[200], onTop: () {}),
+          color: Theme.of(context).colorScheme.primary,
+          child: MyButton(
+              color: Theme.of(context).colorScheme.secondary,
+              onTop: () {
+                Provider.of<ThemeProvider>(context, listen: false)
+                    .toggleTheme();
+              }),
         ),
       ),
     );
