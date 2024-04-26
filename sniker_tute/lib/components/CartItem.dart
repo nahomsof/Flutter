@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sniker_tute/model/cart.dart';
 import 'package:sniker_tute/model/shoe.dart';
 
 class CartItem extends StatefulWidget {
@@ -10,6 +12,10 @@ class CartItem extends StatefulWidget {
 }
 
 class _CartItemState extends State<CartItem> {
+  void removeItemFromCart() {
+    Provider.of<Cart>(context, listen: false).removeItemFromCart(widget.shoe);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,6 +26,10 @@ class _CartItemState extends State<CartItem> {
         leading: Image.asset(widget.shoe.imagePath),
         title: Text(widget.shoe.name),
         subtitle: Text(widget.shoe.price),
+        trailing: IconButton(
+          icon: Icon(Icons.delete),
+          onPressed: removeItemFromCart,
+        ),
       ),
     );
   }

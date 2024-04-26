@@ -28,15 +28,50 @@ class Cart extends ChangeNotifier {
         imagePath: "lib/Images/air-jordan-1-retro-high(180).png",
         price: "180"),
     Shoe(
-        name: "stateoffcourt",
+        name: "Jordan-jumpman",
         description: "Cool shoe",
-        imagePath: "lib/Images/tennessee-stateoffcourt-.png",
-        price: "50"),
+        imagePath: "lib/Images/jordan-jumpman-pro-mens(88).png",
+        price: "88"),
     Shoe(
-        name: "Tatum-2-'vortex'",
+        name: "Air Jordan low",
         description: "Cool shoe",
-        imagePath: "lib/Images/tatum-2-vortex-basketball(124).png",
-        price: "125"),
+        imagePath: "lib/Images/air-jordan-1-low-mens-shoes(115).png",
+        price: "115"),
+    Shoe(
+        name: "Air Jordan 12",
+        description: "Cool shoe",
+        imagePath: "lib/Images/air-jordan-12-retro-.png",
+        price: "200"),
+    Shoe(
+        name: "creter impact'",
+        description: "Cool shoe",
+        imagePath: "lib/Images/crater-impact-womens-shoes(70).png",
+        price: "70"),
+    Shoe(
+        name: "Jordan hydro 4",
+        description: "Cool shoe",
+        imagePath: "lib/Images/jordan.png",
+        price: "70"),
+    Shoe(
+        name: "Jordan-post",
+        description: "Cool shoe",
+        imagePath: "lib/Images/jordan-post-mens(30).png",
+        price: "30"),
+    Shoe(
+        name: "Air Max",
+        description: "Cool shoe",
+        imagePath: "lib/Images/air-max-dn-mens-shoes(150).png",
+        price: "150"),
+    Shoe(
+        name: "Air Jordan3 fear",
+        description: "Cool shoe",
+        imagePath: "lib/Images/air-jordan-3-fear-mens-shoes(210).png",
+        price: "210"),
+    Shoe(
+        name: "Jordan stay loyal",
+        description: "Cool shoe",
+        imagePath: "lib/Images/jordan-stay-loyal-3-mens(75).png",
+        price: "75"),
   ];
 
   //list of items in  for sele
