@@ -27,14 +27,16 @@ class _CartPageState extends State<CartPage> {
                     height: 10,
                   ),
                   Expanded(
-                      child: ListView.builder(itemBuilder: (context, index) {
-                    //get individual shoe
-                    Shoe individualshoe = value.getUserCart()[index];
-                    return CartItem(
-                      shoe: individualshoe,
-                    );
-                    //
-                  }))
+                      child: ListView.builder(
+                          itemCount: value.getUserCart().length,
+                          itemBuilder: (context, index) {
+                            //get individual shoe
+                            Shoe individualshoe = value.getUserCart()[index];
+                            return CartItem(
+                              shoe: individualshoe,
+                            );
+                            //
+                          }))
                 ],
               ),
             ));
