@@ -1,4 +1,5 @@
 import 'package:dark_light_mode/Component/box.dart';
+import 'package:dark_light_mode/Component/button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,11 +8,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[500],
+      backgroundColor: Colors.blue[500],
       body: Center(
         child: MyBox(
-          child: Text("Box"),
-          color: Colors.deepPurple[300],
+          child: MyButton(color: Colors.blue[300], onTop: () {}),
+          color: Colors.blue[200],
         ),
       ),
     );
