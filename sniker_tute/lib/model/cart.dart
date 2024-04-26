@@ -8,25 +8,25 @@ class Cart extends ChangeNotifier {
   //list of shoe for sele
   List<Shoe> shoeShop = [
     Shoe(
-        name: "Air force 1 low",
+        name: "air-vapormax",
         description: "Cool shoe",
-        imagePath: "lib/Images/nike-air-force-1-low-.png",
-        price: "\$100 - 140"),
+        imagePath: "lib/Images/air-vapormax-plus-mens-shoes(230).png",
+        price: "230"),
     Shoe(
-        name: "Air jordan 1 low",
+        name: "Dunk low retro",
         description: "Cool shoe",
-        imagePath: "lib/Images/hoter.png",
-        price: "\$100 - 140"),
+        imagePath: "lib/Images/dunk-low-retro-mens-shoes(115).png",
+        price: "115"),
     Shoe(
-        name: "Splash 1 low",
+        name: "Lebron XXI",
         description: "Cool shoe",
-        imagePath: "lib/Images/Splash.png",
-        price: "\$100 - 140"),
+        imagePath: "lib/Images/lebron-xxi-basketball-shoes(115).png",
+        price: "115"),
     Shoe(
-        name: "Air force 1 low",
+        name: "Calm",
         description: "Cool shoe",
-        imagePath: "lib/Images/png.png",
-        price: "\$100 - 140"),
+        imagePath: "lib/Images/college-offcourt.png",
+        price: "40"),
   ];
 
   //list of items in  for sele
