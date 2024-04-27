@@ -12,15 +12,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
-        child: MyBox(
-          color: Theme.of(context).colorScheme.primary,
-          child: MyButton(
-              color: Theme.of(context).colorScheme.secondary,
-              onTop: () {
-                Provider.of<ThemeProvider>(context, listen: false)
-                    .toggleTheme();
-              }),
-        ),
+        child: MyButton(
+            color: Theme.of(context).colorScheme.secondary,
+            onTop: () {
+              Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+            }),
       ),
     );
   }
