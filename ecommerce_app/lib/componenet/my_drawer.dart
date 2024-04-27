@@ -42,7 +42,11 @@ class MyDrawer extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.only(bottom: 25.0),
-            child: MyListTile(icon: Icons.logout, text: "Exit", onTap: () {}),
+            child: MyListTile(
+                icon: Icons.logout,
+                text: "Exit",
+                onTap: () => Navigator.pushAndRemoveUntil(
+                    context, 'intro_page', (route) => false)),
           ),
           //cart tile
 

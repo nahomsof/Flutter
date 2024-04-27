@@ -15,6 +15,7 @@ class ShopPage extends StatelessWidget {
         title: Text("Shop Page"),
       ),
       drawer: MyDrawer(),
+      backgroundColor: Theme.of(context).colorScheme.background,
     );
   }
 }
