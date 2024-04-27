@@ -9,24 +9,38 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //drawer header logo
-          DrawerHeader(
-            child: Center(
-              child: Icon(
-                Icons.shopping_bag,
-                size: 72,
-                color: Theme.of(context).colorScheme.inversePrimary,
+          Column(
+            children: [
+              DrawerHeader(
+                child: Center(
+                  child: Icon(
+                    Icons.shopping_bag,
+                    size: 72,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                ),
               ),
-            ),
+              const SizedBox(
+                height: 25,
+              ),
+              //shop tile
+              MyListTile(
+                  icon: Icons.home,
+                  text: "Shop",
+                  onTap: () => Navigator.pop(context)),
+              MyListTile(
+                  icon: Icons.shopping_cart,
+                  text: "Cart",
+                  onTap: () => Navigator.pushNamed(context, '/cart_page')),
+            ],
           ),
-          const SizedBox(
-            height: 25,
+
+          Padding(
+            padding: const EdgeInsets.only(bottom: 25.0),
+            child: MyListTile(icon: Icons.logout, text: "Exit", onTap: () {}),
           ),
-          //shop tile
-          MyListTile(icon: Icons.home, text: "Shop", onTap: () {}),
-          MyListTile(icon: Icons.shopping_cart, text: "Cart", onTap: () {}),
-          MyListTile(icon: Icons.logout, text: "exit", onTap: () {}),
           //cart tile
 
           //exit
