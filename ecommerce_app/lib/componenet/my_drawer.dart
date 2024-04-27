@@ -24,7 +24,9 @@ class MyDrawer extends StatelessWidget {
             height: 25,
           ),
           //shop tile
-          MyListTile(icon: Icons.home, text: "Shop", onTap: () {})
+          MyListTile(icon: Icons.home, text: "Shop", onTap: () {}),
+          MyListTile(icon: Icons.shopping_cart, text: "Cart", onTap: () {}),
+          MyListTile(icon: Icons.logout, text: "exit", onTap: () {}),
           //cart tile
 
           //exit
