@@ -1,6 +1,5 @@
 import 'package:shoe_shoe_with_theme/themes/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 class ThemeProvider with ChangeNotifier {
   ThemeData _themeData = ThemeData();

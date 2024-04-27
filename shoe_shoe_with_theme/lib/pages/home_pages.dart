@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shoe_shoe_with_theme/components/bottom_navigetor.dart';
+import 'package:shoe_shoe_with_theme/components/botton.dart';
 import 'package:shoe_shoe_with_theme/pages/CartPages.dart';
 import 'package:shoe_shoe_with_theme/pages/ShopPage.dart';
+import 'package:shoe_shoe_with_theme/themes/theme_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -91,6 +94,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                  Center(
+                    child: MyButton(
+                      color: Theme.of(context).colorScheme.secondary,
+                      onTop: () {
+                        Provider.of<ThemeProvider>(context, listen: false)
+                            .toggleTheme();
+                      },
+                    ),
+                  )
                 ],
               ),
               const Padding(
