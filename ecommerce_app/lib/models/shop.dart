@@ -6,22 +6,22 @@ class Shop extends ChangeNotifier {
     Product(
         description: "Item description.. more description......",
         price: 200,
-        name: "Prodcution 1",
+        name: "Product 1",
         imagePath: 'lib/Images/images.png'),
     Product(
         description: "Item description..",
         price: 30.99,
-        name: "Prodcution 2",
+        name: "Product 2",
         imagePath: 'lib/Images/hodi.png'),
     Product(
         description: "Item description..",
         price: 25.99,
-        name: "Prodcution 3",
+        name: "Product 3",
         imagePath: 'lib/Images/NV1923-F02.png'),
     Product(
         description: "Item description..",
         price: 125,
-        name: "Prodcution 4",
+        name: "Product 4",
         imagePath: 'lib/Images/dunk-low-twist-womens-shoes-TsSP0p.png'),
   ];
 

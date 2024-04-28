@@ -3,6 +3,8 @@ import 'package:ecommerce_app/Pages/intropage.dart';
 
 import 'package:ecommerce_app/Pages/shop_pages.dart';
 import 'package:ecommerce_app/models/shop.dart';
+import 'package:ecommerce_app/themes/dark_mode.dart';
+import 'package:ecommerce_app/themes/light_mode.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const IntroPages(),
+      theme: lightMode,
       routes: {
         '/intropage': (context) => const IntroPages(),
         '/shop_pages': (context) => const ShopPage(),
