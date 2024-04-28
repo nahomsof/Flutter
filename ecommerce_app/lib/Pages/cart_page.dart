@@ -12,13 +12,13 @@ class CartPage extends StatelessWidget {
         content: Text("Remove this item to your cart"),
         actions: [
           MaterialButton(
+            onPressed: () => context.read<Shop>().addToCart(product),
+            child: Text("Yes"),
+          ),
+          MaterialButton(
             onPressed: () => Navigator.pop(context),
             child: const Text("Cancel"),
           ),
-          MaterialButton(
-            onPressed: () => context.read<Shop>().addToCart(product),
-            child: Text("Yes"),
-          )
         ],
       ),
     );
