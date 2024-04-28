@@ -45,8 +45,8 @@ class MyDrawer extends StatelessWidget {
             child: MyListTile(
                 icon: Icons.logout,
                 text: "Exit",
-                onTap: () => Navigator.pushAndRemoveUntil(
-                    context, 'intro_page', (route) => false)),
+                onTap: () => Navigator.pushNamedAndRemoveUntil(
+                    context, '/intropage', (route) => false)),
           ),
           //cart tile
 
