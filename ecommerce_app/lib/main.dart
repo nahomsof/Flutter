@@ -4,12 +4,13 @@ import 'package:ecommerce_app/Pages/setting_page.dart';
 import 'package:ecommerce_app/Pages/shop_pages.dart';
 import 'package:ecommerce_app/models/shop.dart';
 import 'package:ecommerce_app/themes/light_mode.dart';
+import 'package:ecommerce_app/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (context) => Shop(),
+    create: (context) => ThemeProvider(),
     child: const MyApp(),
   ));
 }
