@@ -1,11 +1,33 @@
 import 'package:ecommerce_app/models/product.dart';
+import 'package:ecommerce_app/models/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 
 class MyProductTile extends StatelessWidget {
   final Product product;
 
   const MyProductTile({super.key, required this.product});
+
+  //add cart method
+  void addToCart(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: Text("Add this item to your cart"),
+        actions: [
+          MaterialButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text("Cancel"),
+          ),
+          MaterialButton(
+            onPressed: () => context.read<Shop>().addToCart(product),
+            child: Text("Yes"),
+          )
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +76,21 @@ class MyProductTile extends StatelessWidget {
               ),
             ],
           ),
-          Text(product.price.toStringAsFixed(2)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("\$" + product.price.toStringAsFixed(2)),
+              //add to cart button
+
+              Container(
+                child: IconButton(
+                    onPressed: () => addToCart(context), icon: Icon(Icons.add)),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                    borderRadius: BorderRadius.circular(12)),
+              )
+            ],
+          ),
         ],
       ),
     );

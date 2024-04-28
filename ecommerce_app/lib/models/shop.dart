@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 class Shop extends ChangeNotifier {
   final List<Product> _shop = [
     Product(
-        description: "Item description..", price: 99.99, name: "Prodcution 1"),
+        description: "Item description.. more description......",
+        price: 99.99,
+        name: "Prodcution 1"),
     Product(
         description: "Item description..", price: 99.99, name: "Prodcution 1"),
     Product(
