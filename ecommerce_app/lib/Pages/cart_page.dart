@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/componenet/my_botton.dart';
 import 'package:ecommerce_app/models/product.dart';
 import 'package:ecommerce_app/models/shop.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,15 @@ class CartPage extends StatelessWidget {
     );
   }
 
+  void payButtonPressed(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+              content: Text(
+                  "User wantes to pay! Connect this app to your payment backend"),
+            ));
+  }
+
   @override
   Widget build(BuildContext context) {
     final cart = context.watch<Shop>().cart;
@@ -39,22 +49,35 @@ class CartPage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-              child: ListView.builder(
-                  itemCount: cart.length,
-                  itemBuilder: (context, index) {
-                    final item = cart[index];
+              child: cart.isEmpty
+                  ? Text("Your cart is empty...")
+                  : ListView.builder(
+                      itemCount: cart.length,
+                      itemBuilder: (context, index) {
+                        final item = cart[index];
 
-                    return ListTile(
-                      title: Text(
-                        item.name,
-                      ),
-                      subtitle: Text(item.price.toString()),
-                      trailing: IconButton(
-                        icon: const Icon(Icons.remove),
-                        onPressed: () => removeItemFromCart(context, item),
-                      ),
-                    );
-                  }))
+                        return ListTile(
+                          title: Text(
+                            item.name,
+                          ),
+                          subtitle: Text(item.price.toString()),
+                          trailing: IconButton(
+                            icon: const Icon(Icons.remove),
+                            onPressed: () => removeItemFromCart(context, item),
+                          ),
+                        );
+                      })),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(50.0),
+                child: MyButton(
+                    onTap: () => payButtonPressed(context),
+                    child: Text("PAY NOW")),
+              ),
+            ],
+          )
         ],
       ),
     );
