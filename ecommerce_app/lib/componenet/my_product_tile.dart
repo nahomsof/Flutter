@@ -17,13 +17,13 @@ class MyProductTile extends StatelessWidget {
         content: Text("Add this item to your cart"),
         actions: [
           MaterialButton(
+            onPressed: () => context.read<Shop>().addToCart(product),
+            child: Text("Yes"),
+          ),
+          MaterialButton(
             onPressed: () => Navigator.pop(context),
             child: Text("Cancel"),
           ),
-          MaterialButton(
-            onPressed: () => context.read<Shop>().addToCart(product),
-            child: Text("Yes"),
-          )
         ],
       ),
     );
