@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/Pages/cart_page.dart';
 import 'package:ecommerce_app/Pages/intropage.dart';
+import 'package:ecommerce_app/Pages/setting_page.dart';
 import 'package:ecommerce_app/Pages/shop_pages.dart';
 import 'package:ecommerce_app/models/shop.dart';
 import 'package:ecommerce_app/themes/light_mode.dart';
@@ -21,11 +22,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const IntroPages(),
-      theme: lightmode,
+      theme: Provider.of(context),
       routes: {
         '/intropage': (context) => const IntroPages(),
         '/shop_pages': (context) => const ShopPage(),
         '/cart_page': (context) => const CartPage(),
+        '/setting_page': (context) => const MySetting(),
       },
     );
   }

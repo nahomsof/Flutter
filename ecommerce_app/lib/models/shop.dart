@@ -7,7 +7,7 @@ class Shop extends ChangeNotifier {
         description: "Item description.. more description......",
         price: 200,
         name: "Prodcution 1",
-        imagePath: 'lib/Images/AirPods-Pro-2nd-Gen-Gear.png'),
+        imagePath: 'lib/Images/images.png'),
     Product(
         description: "Item description..",
         price: 30.99,
@@ -22,7 +22,7 @@ class Shop extends ChangeNotifier {
         description: "Item description..",
         price: 125,
         name: "Prodcution 4",
-        imagePath: 'lib/Images/air-jordan-1-mid-shoes-X5pM09.png'),
+        imagePath: 'lib/Images/dunk-low-twist-womens-shoes-TsSP0p.png'),
   ];
 
   List<Product> _cart = [];
