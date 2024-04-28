@@ -19,8 +19,8 @@ class Button extends StatelessWidget {
           ),
         ),
         Container(
-          width: 50,
-          height: 50,
+          width: 40,
+          height: 40,
           child: GestureDetector(
             onTap: onTop,
             child: Container(
@@ -28,7 +28,7 @@ class Button extends StatelessWidget {
                 color: Theme.of(context).colorScheme.inversePrimary,
                 borderRadius: BorderRadius.circular(10),
               ),
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(8),
               child:
                   const Center(child: Icon(Icons.on_device_training_outlined)),
             ),
