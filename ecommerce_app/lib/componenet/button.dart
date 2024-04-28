@@ -12,7 +12,12 @@ class Button extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text("Dark mode"),
+        Text(
+          "Dark mode",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         Container(
           width: 50,
           height: 50,
