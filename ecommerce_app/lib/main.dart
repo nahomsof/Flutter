@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:ecommerce_app/Pages/cart_page.dart';
 import 'package:ecommerce_app/Pages/intropage.dart';
 import 'package:ecommerce_app/Pages/setting_page.dart';
@@ -9,10 +11,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => ThemeProvider(),
-    child: const MyApp(),
-  ));
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => Shop(),
+    )
+  ]));
 }
 
 class MyApp extends StatelessWidget {
