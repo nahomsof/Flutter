@@ -42,7 +42,7 @@ class MyDrawer extends StatelessWidget {
                   text: "Setting",
                   onTap: () {
                     Navigator.pop(context);
-                    Navigator.pushNamed(context, '/setting_page');
+                    Navigator.pushNamed(context, '/settings_pages');
                   }),
             ],
           ),
