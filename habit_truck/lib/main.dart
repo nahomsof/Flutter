@@ -1,8 +1,15 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:habit_truck/pages/home_page.dart';
+import 'package:habit_truck/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: HomePage(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
