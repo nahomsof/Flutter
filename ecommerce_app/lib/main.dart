@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/Pages/cart_page.dart';
 import 'package:ecommerce_app/Pages/intropage.dart';
+import 'package:ecommerce_app/Pages/rating_page.dart';
 import 'package:ecommerce_app/Pages/settings_pages.dart';
 
 import 'package:ecommerce_app/Pages/shop_pages.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/shop_pages': (context) => const ShopPage(),
         '/cart_page': (context) => const CartPage(),
         '/settings_pages': (context) => const SettingPage(),
+        '/rating_page': (context) => const MyHomepage(),
       },
     );
   }

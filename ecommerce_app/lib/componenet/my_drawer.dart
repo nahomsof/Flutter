@@ -37,6 +37,7 @@ class MyDrawer extends StatelessWidget {
                     Navigator.pop(context);
                     Navigator.pushNamed(context, '/cart_page');
                   }),
+
               MyListTile(
                   icon: Icons.settings,
                   text: "Setting",
@@ -46,6 +47,13 @@ class MyDrawer extends StatelessWidget {
                   }),
             ],
           ),
+          MyListTile(
+              icon: Icons.rate_review,
+              text: "Rate App",
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/rating_page');
+              }),
 
           Padding(
             padding: const EdgeInsets.only(bottom: 25.0),
