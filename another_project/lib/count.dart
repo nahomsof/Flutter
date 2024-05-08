@@ -18,7 +18,7 @@ class Count extends StatelessWidget {
         IconButton(
           icon: const Icon(Icons.add),
           onPressed: () => onCountChange(1),
-        ),
+        ),,
         FloatingActionButton(onPressed: onPressed)(
           child: Text("$count"),
           onPressed: () => onCountSelected(),
