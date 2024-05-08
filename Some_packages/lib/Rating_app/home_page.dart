@@ -15,6 +15,7 @@ class _MyHomepageState extends State<MyHomepage> {
       body: Center(
         child: RatingBar.builder(
             itemCount: 7,
+            allowHalfRating: true,
             initialRating: 2,
             itemPadding: const EdgeInsets.symmetric(horizontal: 5),
             direction: Axis.horizontal,
