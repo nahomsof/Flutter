@@ -47,21 +47,25 @@ class MyDrawer extends StatelessWidget {
                   }),
             ],
           ),
-          MyListTile(
-              icon: Icons.rate_review,
-              text: "Rate App",
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/rating_page');
-              }),
 
-          Padding(
-            padding: const EdgeInsets.only(bottom: 25.0),
-            child: MyListTile(
-                icon: Icons.logout,
-                text: "Exit",
-                onTap: () => Navigator.pushNamedAndRemoveUntil(
-                    context, '/intropage', (route) => false)),
+          Column(
+            children: [
+              MyListTile(
+                  icon: Icons.rate_review_rounded,
+                  text: "Rate App",
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, '/rating_page');
+                  }),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 25.0),
+                child: MyListTile(
+                    icon: Icons.logout,
+                    text: "Exit",
+                    onTap: () => Navigator.pushNamedAndRemoveUntil(
+                        context, '/intropage', (route) => false)),
+              ),
+            ],
           ),
           //cart tile
 
