@@ -2,8 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habit_truck/component/drawer.dart';
 import 'package:habit_truck/database/habit_database.dart';
+import 'package:habit_truck/database/habit_database.dart';
+import 'package:habit_truck/database/habit_database.dart';
+import 'package:habit_truck/database/habit_database.dart';
+import 'package:habit_truck/models/habit.dart';
 import 'package:habit_truck/themes/theme_provider.dart';
+import 'package:habit_truck/util/habit_util.dart';
+import 'package:isar/isar.dart';
 import 'package:provider/provider.dart';
+
+import '../database/habit_database.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,8 +23,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    //read
+    //read existing habits on app
+    Provider.of<HabitDatabase>(context, listen: false).readHabits();
+    super.initState();
   }
+
   //text conroller
   final TextEditingController textController = TextEditingController();
   //create new habit
@@ -64,6 +75,21 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.tertiary,
         child: const Icon(Icons.add),
       ),
+      body: _buildhabitlist(),
     );
+  }
+
+  Widget _buildhabitlist() {
+    final habitdatabase = context.watch<HabitDatabase>();
+    List<Habit> currentHabit = habitdatabase.currentHabit;
+    return ListView.builder(
+        itemCount: currentHabit.length,
+        itemBuilder: (context, index) {
+          final habit = currentHabit[index];
+          bool iscompletedToday = isHabitComplitedToday(habit.completedDays);
+          return ListTile(
+            title: Text(habit.name),
+          );
+        });
   }
 }
