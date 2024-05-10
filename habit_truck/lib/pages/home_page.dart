@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habit_truck/component/drawer.dart';
-import 'package:habit_truck/database/habit_database.dart';
-import 'package:habit_truck/database/habit_database.dart';
-import 'package:habit_truck/database/habit_database.dart';
+import 'package:habit_truck/component/my_habit_tile.dart';
 import 'package:habit_truck/database/habit_database.dart';
 import 'package:habit_truck/models/habit.dart';
-import 'package:habit_truck/themes/theme_provider.dart';
 import 'package:habit_truck/util/habit_util.dart';
-import 'package:isar/isar.dart';
+
 import 'package:provider/provider.dart';
 
 import '../database/habit_database.dart';
@@ -87,9 +84,7 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) {
           final habit = currentHabit[index];
           bool iscompletedToday = isHabitComplitedToday(habit.completedDays);
-          return ListTile(
-            title: Text(habit.name),
-          );
+          return MyHabitTile(inComplite: iscompletedToday, text: habit.name);
         });
   }
 }
