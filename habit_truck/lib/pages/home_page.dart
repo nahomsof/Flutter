@@ -13,6 +13,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    //read
+  }
   //text conroller
   final TextEditingController textController = TextEditingController();
   //create new habit
@@ -37,11 +41,14 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: const Text('Save'),
                 ),
-                MaterialButton(onPressed: () {
-                  Navigator.pop(context);
-                  //clear contorller
-                  textController.clear();
-                })
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    //clear contorller
+                    textController.clear();
+                  },
+                  child: const Text('Cancel'),
+                )
               ],
             ));
   }
@@ -50,7 +57,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: createnewhabit,
         elevation: 0,

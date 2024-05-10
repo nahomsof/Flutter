@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   //initialized database
-  await HabitDatabase.initialize;
+  await HabitDatabase.initialize();
   await HabitDatabase.saveFirstLaunchDate();
 
   runApp(MultiProvider(
