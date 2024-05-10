@@ -1,11 +1,22 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:habit_truck/database/habit_database.dart';
 import 'package:habit_truck/pages/home_page.dart';
 import 'package:habit_truck/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => ThemeProvider(),
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized;
+  //initialized database
+  await HabitDatabase.initialize;
+  await HabitDatabase.saveFirstLaunchDate();
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => HabitDatabase()),
+      ChangeNotifierProvider(create: (context) => ThemeProvider())
+    ],
     child: const MyApp(),
   ));
 }

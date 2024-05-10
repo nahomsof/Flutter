@@ -25,13 +25,21 @@ class _HomePageState extends State<HomePage> {
                 decoration: InputDecoration(hintText: "Creat a new habit"),
               ),
               actions: [
+                MaterialButton(
+                  onPressed: () {
+                    String newhabitname = textController.text;
+                    //save to db
+                    context.read<HabitDatabase>().addHabit(newhabitname);
+                    //pop box
+                    Navigator.pop(context);
+                    //clear controller
+                    textController.clear();
+                  },
+                  child: const Text('Save'),
+                ),
                 MaterialButton(onPressed: () {
-                  String newhabitname = textController.text;
-                  //save to db
-                  context.read<HabitDatabase>().addHabit(newhabitname);
-                  //pop box
                   Navigator.pop(context);
-                  //clear controller
+                  //clear contorller
                   textController.clear();
                 })
               ],
