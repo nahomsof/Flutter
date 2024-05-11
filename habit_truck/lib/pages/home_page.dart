@@ -61,6 +61,13 @@ class _HomePageState extends State<HomePage> {
             ));
   }
 
+  void checkhabitonoff(bool? value, Habit habit) {
+    //update habit compilation states
+    if (value != null) {
+      context.read<HabitDatabase>().updateHabitCompletion(habit.idCom, value);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +91,11 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) {
           final habit = currentHabit[index];
           bool iscompletedToday = isHabitComplitedToday(habit.completedDays);
-          return MyHabitTile(inComplite: iscompletedToday, text: habit.name);
+          return MyHabitTile(
+            inComplite: iscompletedToday,
+            text: habit.name,
+            onChanged: (value) => checkhabitonoff(value, habit),
+          );
         });
   }
 }

@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 class MyHabitTile extends StatelessWidget {
   final bool inComplite;
   final String text;
-  const MyHabitTile({super.key, required this.inComplite, required this.text});
+  final void Function(bool?)? onChanged;
+  MyHabitTile(
+      {super.key,
+      required this.inComplite,
+      required this.text,
+      required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +19,13 @@ class MyHabitTile extends StatelessWidget {
               : Theme.of(context).colorScheme.secondary,
         ),
         padding: const EdgeInsets.all(12),
-        child: Text(text),
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
         child: ListTile(
-          title: Text(),
+          title: Text(text),
+          leading: Checkbox(
+            value: inComplite,
+            onChanged: onChanged,
+          ),
         ));
   }
 }
