@@ -141,7 +141,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+      ),
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: createnewhabit,
