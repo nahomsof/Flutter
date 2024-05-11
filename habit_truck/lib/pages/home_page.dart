@@ -90,7 +90,6 @@ class _HomePageState extends State<HomePage> {
                     //pop box
                     Navigator.pop(context);
                     //clear controller
-                    textController.clear();
                   },
                   child: const Text('Save'),
                 ),

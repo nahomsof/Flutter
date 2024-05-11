@@ -91,7 +91,7 @@ class HabitDatabase extends ChangeNotifier {
     if (habit != null) {
       //update name
       await isar.writeTxn(() async {
-        await isar.habits.delete(id);
+        await isar.habits.put(habit);
       });
       readHabits();
     }
