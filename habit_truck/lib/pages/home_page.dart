@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
   void checkhabitonoff(bool? value, Habit habit) {
     //update habit compilation states
     if (value != null) {
-      context.read<HabitDatabase>().updateHabitCompletion(habit.idCom, value);
+      context.read<HabitDatabase>().updateHabitCompletion(habit.id, value);
     }
   }
 
@@ -77,7 +77,10 @@ class _HomePageState extends State<HomePage> {
         onPressed: createnewhabit,
         elevation: 0,
         backgroundColor: Theme.of(context).colorScheme.tertiary,
-        child: const Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).colorScheme.inversePrimary,
+        ),
       ),
       body: _buildhabitlist(),
     );

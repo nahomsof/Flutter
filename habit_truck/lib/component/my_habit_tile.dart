@@ -12,20 +12,29 @@ class MyHabitTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-          color: inComplite
-              ? Colors.green
-              : Theme.of(context).colorScheme.secondary,
-        ),
-        padding: const EdgeInsets.all(12),
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-        child: ListTile(
-          title: Text(text),
-          leading: Checkbox(
-            value: inComplite,
-            onChanged: onChanged,
+    return GestureDetector(
+      onTap: () {
+        if (onChanged != null) {
+          //toggle completion status
+          onChanged!(!inComplite);
+        }
+      },
+      child: Container(
+          decoration: BoxDecoration(
+            color: inComplite
+                ? Colors.green
+                : Theme.of(context).colorScheme.secondary,
           ),
-        ));
+          padding: const EdgeInsets.all(12),
+          margin: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+          child: ListTile(
+            title: Text(text),
+            leading: Checkbox(
+              activeColor: Colors.green,
+              value: inComplite,
+              onChanged: onChanged,
+            ),
+          )),
+    );
   }
 }
