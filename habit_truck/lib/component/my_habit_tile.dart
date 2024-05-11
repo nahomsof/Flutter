@@ -29,7 +29,7 @@ class MyHabitTile extends StatelessWidget {
           ),
           SlidableAction(
             onPressed: deleteHabit,
-            backgroundColor: Colors.grey.shade800,
+            backgroundColor: Colors.red,
             icon: Icons.delete,
             borderRadius: BorderRadius.circular(8),
           ),
