@@ -10,7 +10,7 @@ class MyHabitTile extends StatelessWidget {
   MyHabitTile(
       {super.key,
       required this.inComplite,
-      required this.text,
+      required thi.text,
       required this.onChanged,
       required this.edithabit,
       required this.deleteHabit});
