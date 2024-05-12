@@ -18,7 +18,7 @@ class MyHabitTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+      padding: const EdgeIsets.symmetric(vertical: 5, horizontal: 25),
       child: Slidable(
         endActionPane: ActionPane(
           motion: const StretchMotion(),
