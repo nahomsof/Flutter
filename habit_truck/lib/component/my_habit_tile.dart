@@ -20,7 +20,7 @@ class MyHabitTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
       child: Slidable(
-        endActionPane: AcionPane(
+        endActionPane: ActionPane(
           motion: const StretchMotion(),
           children: [
             SlidableAction(
