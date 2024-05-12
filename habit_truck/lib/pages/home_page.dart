@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:habit_truck/component/drawer.dart';
 import 'package:habit_truck/component/my_habit_tile.dart';
+import 'package:habit_truck/component/my_heat_map.dart';
 import 'package:habit_truck/database/habit_database.dart';
 import 'package:habit_truck/models/habit.dart';
 import 'package:habit_truck/util/habit_util.dart';
@@ -156,14 +158,42 @@ class _HomePageState extends State<HomePage> {
           color: Theme.of(context).colorScheme.inversePrimary,
         ),
       ),
-      body: _buildhabitlist(),
+      body: ListView(
+        children: [
+          // HEAT MAP
+          _buildHeatMap(),
+          //HABITLIST
+          _buildhabitlist(),
+        ],
+      ),
     );
+  }
+
+  //BUILD heat MAP
+  Widget _buildHeatMap() {
+    final habitDatabase = context.watch<HabitDatabase>();
+    //current habit
+    List<Habit> currentHabit = habitDatabase.currentHabit;
+    //return habit list
+    return FutureBuilder<DateTime?>(
+        future: HabitDatabase.getFirstLaunchDate(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return MyHeatMap(
+                startDate: snapshot.data!,
+                datasets: prepHeatMapDataset(currentHabit));
+          } else {
+            return Container();
+          }
+        });
   }
 
   Widget _buildhabitlist() {
     final habitdatabase = context.watch<HabitDatabase>();
     List<Habit> currentHabit = habitdatabase.currentHabit;
     return ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: currentHabit.length,
         itemBuilder: (context, index) {
           final habit = currentHabit[index];
