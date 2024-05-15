@@ -18,7 +18,7 @@ class HabitDatabase extends ChangeNotifier {
     final existingSettings = await isar.appSettings.where().findFirst();
     if (existingSettings == null) {
       final settings = AppSettings()..firstLounchDate = DateTime.now();
-      await isar.writeTxn(() => isar.appSettings.put(settings))
+      await isar.writeTxn(() => isar.appSettings.put(settings));
     }
   }
 
