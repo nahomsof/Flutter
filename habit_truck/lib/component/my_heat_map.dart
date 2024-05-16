@@ -10,7 +10,7 @@ class MyHeatMap extends StatelessWidget {
   Widget build(BuildContext context) {
     return HeatMap(
         startDate: startDate,
-        datasets: datasts,
+        datasets: datasets,
         colorMode: ColorMode.color,
         defaultColor: Theme.of(context).colorScheme.secondary,
         endDate: DateTime.now(),
