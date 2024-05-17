@@ -22,7 +22,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State {
   int _counter = 0;
   void _incrementCounter() {
-    setState(() {
+    setState(() 
       _counter++;
     });
   }
