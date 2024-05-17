@@ -1,3 +1,4 @@
+import 'package:authentication/compontents/my_botton.dart';
 import 'package:authentication/compontents/my_textfilds.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,8 @@ class LoginPage extends StatelessWidget {
   //text editing controller
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+
+  void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +55,8 @@ class LoginPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+
+              //forgot password?
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -63,13 +68,36 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
-              //forgot password?
-
+              ),
               //sign in button
-
+              const SizedBox(
+                height: 10,
+              ),
+              MyBotton(
+                onTap: signUserIn,
+              ),
+              const SizedBox(
+                height: 50,
+              ),
               //or continut with
-
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey[400],
+                    )),
+                    Text("Or continue with"),
+                    Expanded(
+                        child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey[400],
+                    )),
+                  ],
+                ),
+              )
               //google + apple sign in buttons
 
               //not a  member?  register now
