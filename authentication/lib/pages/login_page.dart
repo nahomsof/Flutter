@@ -108,12 +108,32 @@ class LoginPage extends StatelessWidget {
                 children: [
                   SquereTile(imagepath: 'lib/images/google.png'),
                   const SizedBox(
-                    width: 10,
+                    width: 25,
                   ),
                   SquereTile(imagepath: 'lib/images/apple.png')
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 25,
+              ),
               //not a  member?  register now
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Not a member?",
+                  ),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    "Regester now",
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  )
+                ],
+              )
             ],
           ),
         ),
