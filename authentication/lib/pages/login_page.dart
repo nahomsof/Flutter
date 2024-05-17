@@ -18,6 +18,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 height: 50,
@@ -122,6 +123,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Text(
                     "Not a member?",
+                    style: TextStyle(color: Colors.grey[700]),
                   ),
                   const SizedBox(
                     width: 4,
