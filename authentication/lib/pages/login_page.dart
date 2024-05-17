@@ -1,5 +1,6 @@
 import 'package:authentication/compontents/my_botton.dart';
 import 'package:authentication/compontents/my_textfilds.dart';
+import 'package:authentication/compontents/squere_tile.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -97,9 +98,21 @@ class LoginPage extends StatelessWidget {
                     )),
                   ],
                 ),
-              )
+              ),
               //google + apple sign in buttons
-
+              const SizedBox(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SquereTile(imagepath: 'lib/images/google.png'),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  SquereTile(imagepath: 'lib/images/apple.png')
+                ],
+              )
               //not a  member?  register now
             ],
           ),
