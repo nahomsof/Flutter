@@ -27,8 +27,17 @@ class _LoginPageState extends State<LoginPage> {
             child: CircularProgressIndicator(),
           );
         });
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text, password: passwordController.text);
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        void wrongEmailMessage() {}
+      } else if (e.code == 'wrong-password') {
+        void wrongpasswordMessage() {}
+      }
+    }
+    Navigator.pop(context);
   }
 
   @override
