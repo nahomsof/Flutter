@@ -6,7 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -28,16 +28,37 @@ class _LoginPageState extends State<LoginPage> {
           );
         });
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
+      Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
       if (e.code == 'user-not-found') {
-        void wrongEmailMessage() {}
+        wrongEmailMessage();
       } else if (e.code == 'wrong-password') {
-        void wrongpasswordMessage() {}
+        wrongpasswordMessage();
       }
     }
-    Navigator.pop(context);
+  }
+
+  void wrongEmailMessage() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            title: Text("Incorrect Email"),
+          );
+        });
+  }
+
+  void wrongpasswordMessage() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            title: Text("Incorrect password"),
+          );
+        });
   }
 
   @override
