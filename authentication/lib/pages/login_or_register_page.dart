@@ -1,4 +1,5 @@
 import 'package:authentication/pages/login_page.dart';
+import 'package:authentication/pages/register_pages.dart';
 import 'package:flutter/material.dart';
 
 class LoginOrRegisterPage extends StatefulWidget {
@@ -25,7 +26,9 @@ class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
         onTap: togglePages,
       );
     } else {
-      return RegisterPage();
+      return RegisterPage(
+        onTap: togglePages,
+      );
     }
   }
 }

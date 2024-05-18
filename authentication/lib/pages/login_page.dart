@@ -4,9 +4,11 @@ import 'package:authentication/compontents/squere_tile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final Function()? onTap;
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -115,6 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 10,
                 ),
                 MyBotton(
+                  text: "Sign In",
                   onTap: signUserIn,
                 ),
                 const SizedBox(
@@ -168,10 +171,13 @@ class _LoginPageState extends State<LoginPage> {
                       width: 4,
                     ),
                     const SizedBox(width: 4),
-                    Text(
-                      "Regester now",
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: Text(
+                        "Regester now",
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
                     )
                   ],
                 )
