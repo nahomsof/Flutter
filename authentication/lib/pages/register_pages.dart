@@ -1,6 +1,7 @@
 import 'package:authentication/compontents/my_botton.dart';
 import 'package:authentication/compontents/my_textfilds.dart';
 import 'package:authentication/compontents/squere_tile.dart';
+import 'package:authentication/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
@@ -163,11 +164,15 @@ class _RegisterPageState extends State<RegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquereTile(imagepath: 'lib/images/google.png'),
+                    SquereTile(
+                      onTap: () => AuthoService().signinWithGoogle(),
+                      imagepath: 'lib/images/google.png'),
                     const SizedBox(
                       width: 25,
                     ),
-                    SquereTile(imagepath: 'lib/images/apple.png')
+                    SquereTile(
+                      onTap: () {},
+                      imagepath: 'lib/images/apple.png')
                   ],
                 ),
                 const SizedBox(
