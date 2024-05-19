@@ -164,15 +164,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquereTile(
-                      onTap: () => AuthoService().signinWithGoogle(),
-                      imagepath: 'lib/images/google.png'),
+                    SquereTile(imagepath: 'lib/images/google.png'),
                     const SizedBox(
                       width: 25,
                     ),
-                    SquereTile(
-                      onTap: () {},
-                      imagepath: 'lib/images/apple.png')
                   ],
                 ),
                 const SizedBox(
