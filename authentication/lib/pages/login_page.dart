@@ -3,7 +3,6 @@ import 'package:authentication/compontents/my_textfilds.dart';
 import 'package:authentication/compontents/squere_tile.dart';
 import 'package:authentication/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -151,15 +150,12 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SquereTile(
-                      onTap: () => AuthoService().signinWithGoogle(),
-                      imagepath: 'lib/images/google.png',
-                    ),
+                        onTap: () => AuthoService().signinWithGoogle(),
+                        imagepath: 'lib/images/google.png'),
                     const SizedBox(
                       width: 25,
                     ),
-                    SquereTile(
-                      onTap: ,
-                      imagepath: 'lib/images/apple.png')
+                    SquereTile(onTap: () {}, imagepath: 'lib/images/apple.png')
                   ],
                 ),
                 const SizedBox(
