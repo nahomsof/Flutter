@@ -6,6 +6,7 @@ import 'package:online_database/pages/home_pages.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
 
