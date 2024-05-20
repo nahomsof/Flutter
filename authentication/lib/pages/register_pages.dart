@@ -1,7 +1,6 @@
 import 'package:authentication/compontents/my_botton.dart';
 import 'package:authentication/compontents/my_textfilds.dart';
 import 'package:authentication/compontents/squere_tile.dart';
-import 'package:authentication/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
@@ -148,7 +147,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         thickness: 0.5,
                         color: Colors.grey[400],
                       )),
-                      Text("Or continue with"),
+                      const Text("Or continue with"),
                       Expanded(
                           child: Divider(
                         thickness: 0.5,
