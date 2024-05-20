@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'onlinenote-7bbe3.appspot.com',
     measurementId: 'G-NQTTHSV3W9',
   );
+
 }
