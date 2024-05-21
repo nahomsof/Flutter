@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         title: Text("Notes"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: openNoteBox,
         child: const Icon(Icons.add),
       ),
     );
