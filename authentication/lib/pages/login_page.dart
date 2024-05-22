@@ -149,10 +149,13 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquereTile(imagepath: 'lib/images/google.png'),
+                    SquereTile(
+                        onTap: () => AuthoService().signinWithGoogle(),
+                        imagepath: 'lib/images/google.png'),
                     const SizedBox(
                       width: 25,
                     ),
+                    SquereTile(onTap: () {}, imagepath: 'lib/images/apple.png'),
                   ],
                 ),
                 const SizedBox(
