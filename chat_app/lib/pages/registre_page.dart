@@ -2,16 +2,12 @@ import 'package:chat_app/componenet/my_botton.dart';
 import 'package:chat_app/componenet/my_textfiled.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  // email and pw text
+class RegisterPage extends StatelessWidget {
+  RegisterPage({super.key});
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
-  LoginPage({super.key});
-
-  //login method
-
-  void login() {}
-
+  void register() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +23,7 @@ class LoginPage extends StatelessWidget {
           ),
           //Welcome back message
           Text(
-            "Welcome back, you've been missed",
+            "Let's create an account for you",
             style: TextStyle(
                 color: Theme.of(context).colorScheme.primary, fontSize: 16),
           ),
@@ -52,11 +48,16 @@ class LoginPage extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
+          MyTextField(
+            hintText: "Confirm password",
+            obscureText: true,
+            controller: _pwController,
+          ),
 
           // login button
           MyButton(
-            text: "Login",
-            onTap: login,
+            text: "Register",
+            onTap: register,
           ),
           //rgister now
           const SizedBox(
