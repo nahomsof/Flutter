@@ -1,3 +1,4 @@
+import 'package:chat_app/componenet/my_textfiled.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -26,9 +27,14 @@ class LoginPage extends StatelessWidget {
             height: 25,
           ),
           //email textefield
-          TextField()
+          MyTextField(
+            hintText: "Email",
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           //pw textfield
-
+          MyTextField(hintText: "Password")
           //rgister now
         ],
       ),
