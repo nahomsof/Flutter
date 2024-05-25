@@ -1,3 +1,4 @@
+import 'package:chat_app/componenet/my_botton.dart';
 import 'package:chat_app/componenet/my_textfiled.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,7 @@ class LoginPage extends StatelessWidget {
           ),
 
           // login button
-
+          MyButton()
           //rgister now
         ],
       ),
