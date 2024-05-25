@@ -1,5 +1,10 @@
 import 'package:chat_app/Themes/light_mode.dart';
+import 'package:chat_app/services/auth/auth_gate.dart';
+import 'package:chat_app/services/auth/login_or_register.dart';
+import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/pages/login_pages.dart';
+import 'package:chat_app/pages/registre_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -9,6 +14,7 @@ void main() async {
 
 Future<void> setup() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: AuthGate(),
       theme: lightMode,
     );
   }

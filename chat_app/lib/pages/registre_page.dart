@@ -1,13 +1,41 @@
+import 'package:chat_app/services/auth/auth_service.dart';
 import 'package:chat_app/componenet/my_botton.dart';
 import 'package:chat_app/componenet/my_textfiled.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+  final void Function()? onTap;
+  RegisterPage({super.key, required this.onTap});
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
-  void register() {}
+  final TextEditingController confirm_pwController = TextEditingController();
+
+  // register method
+  void register(BuildContext context) {
+    //get atuh service
+    final _auth = AuthService();
+    if (_pwController.text == confirm_pwController.text) {
+      try {
+        _auth.signupWithEmailPassword(
+            _emailController.text, _pwController.text);
+      } catch (e) {
+        showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+                  title: Text(e.toString()),
+                ));
+      }
+    } else {
+      showDialog(
+          context: context,
+          builder: (context) => const AlertDialog(
+                title: Text("Password don't match"),
+              ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +48,9 @@ class RegisterPage extends StatelessWidget {
             Icons.message,
             size: 60,
             color: Theme.of(context).colorScheme.primary,
+          ),
+          const SizedBox(
+            height: 25,
           ),
           //Welcome back message
           Text(
@@ -46,18 +77,20 @@ class RegisterPage extends StatelessWidget {
             controller: _pwController,
           ),
           const SizedBox(
-            height: 25,
+            height: 10,
           ),
           MyTextField(
             hintText: "Confirm password",
             obscureText: true,
-            controller: _pwController,
+            controller: confirm_pwController,
           ),
-
+          const SizedBox(
+            height: 25,
+          ),
           // login button
           MyButton(
             text: "Register",
-            onTap: register,
+            onTap: () => register(context),
           ),
           //rgister now
           const SizedBox(
@@ -68,14 +101,17 @@ class RegisterPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Not a member",
+                "Already have an account? ",
                 style: TextStyle(color: Theme.of(context).colorScheme.primary),
               ),
-              Text(
-                "Register now",
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: onTap,
+                child: Text(
+                  "Login now",
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold),
+                ),
               )
             ],
           )

@@ -1,16 +1,35 @@
+import 'package:chat_app/services/auth/auth_service.dart';
 import 'package:chat_app/componenet/my_botton.dart';
 import 'package:chat_app/componenet/my_textfiled.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatelessWidget {
+  final void Function()? onTap;
   // email and pw text
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
-  LoginPage({super.key});
+  LoginPage({super.key, required this.onTap});
 
   //login method
 
-  void login() {}
+  void login(BuildContext context) async {
+    final authService = AuthService();
+
+    //try login
+    try {
+      await authService.signInWithEmailPassword(
+          _emailController.text, _pwController.text);
+    }
+    //catch any errors
+    catch (e) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                title: Text(e.toString()),
+              ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +43,9 @@ class LoginPage extends StatelessWidget {
             Icons.message,
             size: 60,
             color: Theme.of(context).colorScheme.primary,
+          ),
+          const SizedBox(
+            height: 50,
           ),
           //Welcome back message
           Text(
@@ -56,7 +78,7 @@ class LoginPage extends StatelessWidget {
           // login button
           MyButton(
             text: "Login",
-            onTap: login,
+            onTap: () => login(context),
           ),
           //rgister now
           const SizedBox(
@@ -70,11 +92,14 @@ class LoginPage extends StatelessWidget {
                 "Not a member",
                 style: TextStyle(color: Theme.of(context).colorScheme.primary),
               ),
-              Text(
-                "Register now",
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: onTap,
+                child: Text(
+                  "Register now",
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold),
+                ),
               )
             ],
           )
