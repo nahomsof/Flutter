@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   firebase_core: ^2.27.1
   firebase_auth: ^4.17.9
-  cloud_firestore: ^4.15.9
+  cloud_firestore: ^4.17.4
   firebase_storage: ^11.6.10
   dash_chat_2: ^0.0.20
   firebase_analytics: ^10.8.10
