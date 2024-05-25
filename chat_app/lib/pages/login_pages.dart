@@ -31,7 +31,7 @@ class _LogInPageState extends State<LogInPage> {
 
   Widget _headerText() {
     return SizedBox(
-        width: MediaQuery.sizeOf(context).width,
+        width: MediaQuery.sizeOf(context as BuildContext).width,
         child: const Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -42,7 +42,7 @@ class _LogInPageState extends State<LogInPage> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
             ),
             Text(
-              "Hello again, you've been missed",
+              "Hello again , you've been missed",
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
