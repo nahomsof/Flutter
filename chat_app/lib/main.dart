@@ -1,5 +1,5 @@
+import 'package:chat_app/Themes/light_mode.dart';
 import 'package:chat_app/pages/login_pages.dart';
-import 'package:chat_app/util/util.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -9,7 +9,6 @@ void main() async {
 
 Future<void> setup() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setupFirebase();
 }
 
 class MyApp extends StatelessWidget {
@@ -19,8 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: true,
-      home: LogInPage(),
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
+      theme: lightMode,
     );
   }
 }
