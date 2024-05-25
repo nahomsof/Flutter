@@ -31,7 +31,7 @@ class _LogInPageState extends State<LogInPage> {
 
   Widget _headerText() {
     return SizedBox(
-        width: MediaQuery.sizeOf(context as BuildContext).width,
+        width: MediaQuery.sizeOf(context).width,
         child: const Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
