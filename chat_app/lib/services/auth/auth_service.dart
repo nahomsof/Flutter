@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 
 class AuthService {
   // instance of auth
@@ -16,9 +15,11 @@ class AuthService {
   //sign in
   Future<UserCredential> signInWithEmailPassword(String email, password) async {
     try {
-      // sign user in
+      // sign userin
+
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
+
       //save user info if it doest't already exit
 
       _firestore.collection("Users").doc(userCredential.user!.uid).set({
@@ -40,7 +41,6 @@ class AuthService {
           .createUserWithEmailAndPassword(email: email, password: password);
 
       //save user info in  a separate doc
-
       _firestore.collection("Users").doc(userCredential.user!.uid).set({
         'uid': userCredential.user!.uid,
         'email': email,
@@ -55,6 +55,5 @@ class AuthService {
   Future<void> signOut() async {
     return await _auth.signOut();
   }
-
   //errors
 }

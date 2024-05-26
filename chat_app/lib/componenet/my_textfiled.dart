@@ -20,6 +20,7 @@ class MyTextField extends StatelessWidget {
       child: TextField(
         obscureText: obscureText,
         controller: controller,
+        focusNode: focusNode,
         decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
               borderSide:
