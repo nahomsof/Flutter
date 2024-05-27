@@ -42,6 +42,8 @@ class _ChatPageState extends State<ChatPage> {
     });
 
     //wait a bit for listviw to be built, then scroll to bottom
+
+
     Future.delayed(const Duration(milliseconds: 500), () => scrollDown());
   }
 
@@ -51,6 +53,7 @@ class _ChatPageState extends State<ChatPage> {
     _messageController.dispose();
     super.dispose();
   }
+  
   //scroll controller
 
   final ScrollController _scrollController = ScrollController();
