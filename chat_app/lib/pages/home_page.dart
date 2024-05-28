@@ -47,6 +47,22 @@ class _HomePageState extends State<HomePage> {
               ))
         ],
       ),
+      body: _buildUI(),
     );
+  }
+
+  Widget _buildUI() {
+    return SafeArea(
+        child: Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15.0,
+        vertical: 20.0,
+      ),
+      child: _chatsList(),
+    ));
+  }
+
+  Widget _chatsList() {
+    return Container();
   }
 }
