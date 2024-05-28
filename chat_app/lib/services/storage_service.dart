@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart' as p;
 
 class StorageService {
   final FirebaseStorage _fibaseStorage = FirebaseStorage.instance;
@@ -7,5 +8,14 @@ class StorageService {
   Future<String?> uploaduserPfp({
     required File file,
     required String uid,
-  }) async {}
+  }) async {
+    Reference fileRef =
+        _fibaseStorage.ref('users/pfps').child('$uid${p.extension(file.path)}');
+    UploadTask task = fileRef.putFile(file);
+    return task.then((p) {
+      if (p.state == TaskState.success) {
+        return fileRef.getDownloadURL();
+      }
+    });
+  }
 }
