@@ -10,7 +10,6 @@ import 'package:get_it/get_it.dart';
 
 Future<void> setupFirebase() async {
   await Firebase.initializeApp(
-    name: "fir-chatapp-55e7f",
     options: DefaultFirebaseOptions.currentPlatform,
   );
 }

@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: _navigationService.navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: const LoginPage(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,
