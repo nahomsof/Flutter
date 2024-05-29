@@ -9,7 +9,7 @@ class MediaService {
   Future<File?> getImageFromGallery() async {
     final XFile? _file = await _picker.pickImage(source: ImageSource.gallery);
     if (_file != null) {
-      return File(_file!.path);
+      return File(_file.path);
     }
     return null;
   }

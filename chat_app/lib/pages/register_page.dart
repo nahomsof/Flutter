@@ -156,7 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
         radius: MediaQuery.of(context).size.width * 0.15,
         backgroundImage: selectedImage != null
             ? FileImage(selectedImage!)
-            : NetworkImage(PLACEHOLDER_PEP) as ImageProvider,
+            : NetworkImage(PLACEHOLDER_PFP) as ImageProvider,
       ),
     );
   }
