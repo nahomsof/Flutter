@@ -64,6 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '554637904465',
     projectId: 'fir-chatapp-55e7f',
     storageBucket: 'fir-chatapp-55e7f.appspot.com',
+    iosClientId: '554637904465-545tqeaihpf10ppijj8ivf2101jerml7.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatApp',
   );
 
@@ -73,6 +74,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '554637904465',
     projectId: 'fir-chatapp-55e7f',
     storageBucket: 'fir-chatapp-55e7f.appspot.com',
+    iosClientId: '554637904465-545tqeaihpf10ppijj8ivf2101jerml7.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatApp',
   );
 
@@ -85,4 +87,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'fir-chatapp-55e7f.appspot.com',
     measurementId: 'G-QSR6ENT731',
   );
+
 }
