@@ -1,4 +1,6 @@
-import 'package:_provider/counter_model.dart';
+import 'package:_provider/Provider/counter_model.dart';
+import 'package:_provider/Provider/home_page.dart';
+import 'package:_provider/Themes/light_mode.dart';
 import 'package:_provider/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Home Page'),
+      home: HomePage(),
+      theme: lightMode,
     );
   }
 }
