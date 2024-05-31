@@ -54,6 +54,33 @@ class PlaylistProvider extends ChangeNotifier {
         albumArtImagePath: "lib/Images/Screenshot from 2024-05-31 12-49-18.png",
         artistName: "Dawit_gatachew",
         audioPath: "lib/dave/10 Track 10.mp3",
-        songName: "Track 10")
+        songName: "Track 10"),
+    Song(
+        albumArtImagePath: "lib/Images/Screenshot from 2024-05-31 12-49-18.png",
+        artistName: "Dawit_gatachew",
+        audioPath: "lib/dave/11 Track 11.mp3",
+        songName: "Track 11")
   ];
+
+  // current song playing index
+  int? _currentSongIndex;
+
+  /*
+  GETTERS
+  */
+
+  List<Song> get playlist => _playlist;
+  int? get currentSongIndex => _currentSongIndex;
+
+  /*
+  S E T T E RS
+  */
+
+  set currentSongIndex(int? newIndex) {
+    // update current song index
+    _currentSongIndex = newIndex;
+
+    //update UI
+    notifyListeners();
+  }
 }
