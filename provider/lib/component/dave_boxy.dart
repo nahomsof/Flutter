@@ -22,7 +22,7 @@ class DaveBox extends StatelessWidget {
             const BoxShadow(
               color: Colors.white,
               blurRadius: 15,
-              offset: const Offset(-4, -4),
+              offset: Offset(-4, -4),
             )
           ]),
       padding: const EdgeInsets.all(12),
