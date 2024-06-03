@@ -11,7 +11,7 @@ class SettingPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: Text("S E T T I N G S"),
+        title: const Text("S E T T I N G S"),
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
@@ -23,7 +23,7 @@ class SettingPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //dark mode
-            Text(
+            const Text(
               "Dark Mode",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),

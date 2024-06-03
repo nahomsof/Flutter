@@ -9,57 +9,57 @@ class PlaylistProvider extends ChangeNotifier {
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/01 Track 1.mp3",
+        audioPath: "dave/01 Track 1.mp3",
         songName: "Track 1"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/02 Track 2.mp3",
+        audioPath: "dave/02 Track 2.mp3",
         songName: "Track 2"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/03 Track 3000.mp3",
+        audioPath: "dave/03 Track 3000.mp3",
         songName: "Track 3"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/04 Track 4.mp3",
+        audioPath: "dave/04 Track 4.mp3",
         songName: "Track 4"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/05 Track 5000.mp3",
+        audioPath: "dave/05 Track 5000.mp3",
         songName: "Track "),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/06 Track 6.mp3",
+        audioPath: "dave/06 Track 6.mp3",
         songName: "Track 1"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/07 Track 7000.mp3",
+        audioPath: "dave/07 Track 7000.mp3",
         songName: "Track 7"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/08 Track 8.mp3",
+        audioPath: "dave/08 Track 8.mp3",
         songName: "Track 8"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/09 Track 9.mp3",
+        audioPath: "dave/09 Track 9.mp3",
         songName: "Track 9"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/10 Track 10.mp3",
+        audioPath: "assets/dave/10 Track 10.mp3",
         songName: "Track 10"),
     Song(
         albumArtImagePath: "lib/Images/first.png",
         artistName: "Dawit_gatachew",
-        audioPath: "lib/dave/11 Track 11.mp3",
+        audioPath: "dave/11 Track 11.mp3",
         songName: "Track 11")
   ];
 
