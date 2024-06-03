@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:_provider/Themes/theme.provider.dart';
 import 'package:_provider/models/playlist_provder.dart';
 import 'package:_provider/pages/home_page.dart';
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }

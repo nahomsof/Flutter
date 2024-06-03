@@ -1,7 +1,6 @@
 import 'package:_provider/component/drawer.dart';
 import 'package:_provider/models/playlist_provder.dart';
 import 'package:_provider/models/song.dart';
-import 'package:_provider/pages/setting_page.dart';
 import 'package:_provider/pages/song_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
