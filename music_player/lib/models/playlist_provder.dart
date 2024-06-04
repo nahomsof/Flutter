@@ -7,60 +7,60 @@ class PlaylistProvider extends ChangeNotifier {
 
   final List<Song> _playlist = [
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/bemeh.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/01 Track 1.mp3",
-        songName: "Track 1"),
+        songName: "በምህረቱ"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/nafekalew.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/02 Track 2.mp3",
-        songName: "Track 2"),
+        songName: "እናፍቃለሁ"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/shekemen.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/03 Track 3000.mp3",
-        songName: "Track 3"),
+        songName: "ሸክሜን"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/tezeyelegnal.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/04 Track 4.mp3",
-        songName: "Track 4"),
+        songName: "ትዝ ይለኛል"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/deges.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/05 Track 5000.mp3",
-        songName: "Track "),
+        songName: "ድግስ አዘጋጅቷል"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/derogena.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/06 Track 6.mp3",
-        songName: "Track 1"),
+        songName: "ድሮ ገና"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/etebeke.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/07 Track 7000.mp3",
-        songName: "Track 7"),
+        songName: "ሁኔታዎችን አይቼ"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/keadmasbas.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/08 Track 8.mp3",
-        songName: "Track 8"),
+        songName: "ከአድማስ ባሻገር"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/bemabelwes.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/09 Track 9.mp3",
-        songName: "Track 9"),
+        songName: "በማዕበል ውስጥ ሆኖ"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/zelalem.png",
+        artistName: "Dawit Getachew",
         audioPath: "assets/dave/10 Track 10.mp3",
-        songName: "Track 10"),
+        songName: "ዘላለም አይጠፋም"),
     Song(
-        albumArtImagePath: "lib/Images/first.png",
-        artistName: "Dawit_gatachew",
+        albumArtImagePath: "lib/Images/mekneyat alakerbem.png",
+        artistName: "Dawit Getachew",
         audioPath: "dave/11 Track 11.mp3",
-        songName: "Track 11")
+        songName: "ምክንያት አላቀርብም")
   ];
 
   // current song playing index
