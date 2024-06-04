@@ -8,7 +8,7 @@ class SongPage extends StatelessWidget {
   //convert durationt into min:sec
   String formatTime(Duration duration) {
     String twoDigitSeconds = duration.inSeconds.remainder(60).toString();
-    String formattedTime = "${duration.inMinutes}:$twoDigitSeconds}";
+    String formattedTime = "${duration.inMinutes}:$twoDigitSeconds";
 
     return formattedTime;
   }
@@ -37,9 +37,9 @@ class SongPage extends StatelessWidget {
                     //back button
                     IconButton(
                         onPressed: () => Navigator.pop(context),
-                        icon: Icon(Icons.arrow_back)),
+                        icon: const Icon(Icons.arrow_back)),
                     //title
-                    Text("P L A Y L I S T"),
+                    const Text("P L A Y L I S T"),
                     //menu
                     IconButton(onPressed: () {}, icon: Icon(Icons.menu))
                   ],
@@ -65,13 +65,13 @@ class SongPage extends StatelessWidget {
                         children: [
                           Text(
                             currentSong.songName,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           ),
                           Text(currentSong.artistName)
                         ],
                       ),
-                      Icon(
+                      const Icon(
                         Icons.favorite,
                         color: Colors.red,
                       ),
@@ -93,10 +93,10 @@ class SongPage extends StatelessWidget {
 
                           //shuffle icon
 
-                          Icon(Icons.shuffle),
+                          const Icon(Icons.shuffle),
                           //repeat icon
 
-                          Icon(Icons.repeat),
+                          const Icon(Icons.repeat),
                           //end time
 
                           Text(formatTime(value.totalDuration))
@@ -135,7 +135,7 @@ class SongPage extends StatelessWidget {
                     Expanded(
                         child: GestureDetector(
                       onTap: value.playPreviouSong,
-                      child: DaveBox(
+                      child: const DaveBox(
                         child: Icon(Icons.skip_previous),
                       ),
                     )),
@@ -158,7 +158,7 @@ class SongPage extends StatelessWidget {
                     Expanded(
                         child: GestureDetector(
                       onTap: value.playNextSong,
-                      child: DaveBox(
+                      child: const DaveBox(
                         child: Icon(Icons.skip_next),
                       ),
                     )),
