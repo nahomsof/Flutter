@@ -5,7 +5,6 @@ import 'package:chat_app/services/navigation_service.dart';
 import 'package:chat_app/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:provider/provider.dart';
 
 void main() async {
   await setup();
