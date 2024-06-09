@@ -19,30 +19,16 @@ Future<void> setup() async {
 }
 
 class MyApp extends StatelessWidget {
-  final GetIt _getIt = GetIt.instance;
-  late NavigationService _navigationService;
-  late AuthService _authService;
-  MyApp({super.key}) {
-    _navigationService = _getIt.get<NavigationService>();
-    _authService = _getIt.get<AuthService>();
-  }
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: _navigationService.navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-        ),
-        useMaterial3: true,
-        //textTheme: GoogleFonts.monntserraTextTheme(),
-      ),
-      initialRoute: _authService.user != null ? "/home" : "/login",
-      routes: _navigationService.routes,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
+      home: const LoginPage(),
     );
   }
 }
