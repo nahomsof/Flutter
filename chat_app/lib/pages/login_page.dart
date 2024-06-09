@@ -14,24 +14,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final GetIt _getIt = GetIt.instance;
-  final GlobalKey<FormState> _loginFormKey = GlobalKey();
-
-  late AuthService _authService;
-  late NavigationService _navigationService;
-  late AlertService _alertService;
-
   String? email, password;
 
   @override
-  void initState() {
-    //ToDO: implenent initState
-    super.initState();
-    _authService = _getIt.get<AuthService>();
-    _navigationService = _getIt.get<NavigationService>();
-    _alertService = _getIt.get<AlertService>();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +34,9 @@ class _LoginPageState extends State<LoginPage> {
         vertical: 20.0,
       ),
       child: Column(
-        children: [_headerText(), _loginForm(), _createAnAccountLink()],
+        children: [
+          _headerText(),
+        ],
       ),
     ));
   }
@@ -80,96 +67,5 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
-  }
-
-  Widget _loginForm() {
-    return Container(
-      height: MediaQuery.sizeOf(context).height * 0.40,
-      margin: EdgeInsets.symmetric(
-        vertical: MediaQuery.sizeOf(context).height * 0.05,
-      ),
-      child: Form(
-        key: _loginFormKey,
-        child: Column(
-          children: [
-            CustomFormField(
-              onSaved: (value) {
-                setState(() {
-                  email = value;
-                });
-              },
-              validationRegEx: EMAIL_VALIDATION_REGEX,
-              height: MediaQuery.sizeOf(context).height * 0.1,
-              hintText: "Email",
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            CustomFormField(
-              onSaved: (value) {
-                setState(() {
-                  password = value;
-                });
-              },
-              obsecureText: true,
-              validationRegEx: PASSWORD_VALIDATION_REGEX,
-              height: MediaQuery.sizeOf(context).height * 0.1,
-              hintText: "Password",
-            ),
-            _loginButton(),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _loginButton() {
-    return SizedBox(
-      width: MediaQuery.sizeOf(context).width,
-      child: MaterialButton(
-        onPressed: () async {
-          if (_loginFormKey.currentState?.validate() ?? false) {
-            _loginFormKey.currentState?.save();
-            bool result = await _authService.login(email!, password!);
-            if (result) {
-              if (result) {
-                _navigationService.pushReplacementNamed("/home");
-              }
-            } else {
-              _alertService.showToast(
-                text: "Failed to login, Please try again!",
-                icon: Icons.error,
-              );
-            }
-          }
-        },
-        color: Theme.of(context).colorScheme.primary,
-        child: const Text(
-          "Login",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-  }
-
-  Widget _createAnAccountLink() {
-    return Expanded(
-        child: Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        const Text("Don't have an account? "),
-        GestureDetector(
-          onTap: () {
-            _navigationService.pushNamed("/register");
-          },
-          child: const Text(
-            "Sign Up",
-            style: TextStyle(fontWeight: FontWeight.w800),
-          ),
-        )
-      ],
-    ));
   }
 }
