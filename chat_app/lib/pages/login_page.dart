@@ -15,8 +15,18 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final GetIt _getIt = GetIt.instance;
   final GlobalKey<FormState> _loginFormKey = GlobalKey();
   String? email, password;
+  late AuthService _authService;
+  late NavigationService _navigationService;
+
+  @override
+  void initState() {
+    super.initState();
+    _authService = _getIt.get<AuthService>();
+    _navigationService = _getIt.get<NavigationService>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,11 +92,21 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomFormField(
+              onSaved: (value) {
+                setState(() {
+                  email = value;
+                });
+              },
               validationRegEx: EMAIL_VALIDATION_REGEX,
               hintText: "Email",
               height: MediaQuery.sizeOf(context).height * 0.1,
             ),
             CustomFormField(
+              onSaved: (value) {
+                setState(() {
+                  password = value;
+                });
+              },
               obsecureText: true,
               validationRegEx: PASSWORD_VALIDATION_REGEX,
               hintText: "Password",
@@ -103,9 +123,13 @@ class _LoginPageState extends State<LoginPage> {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
       child: MaterialButton(
-        onPressed: () {
+        onPressed: () async {
           if (_loginFormKey.currentState?.validate() ?? false) {
             _loginFormKey.currentState?.save();
+            bool result = await _authService.login(email!, password!);
+            if (result) {
+              _navigationService.pushReplacementNamed("/home");
+            } else {}
           }
         },
         color: Theme.of(context).colorScheme.primary,

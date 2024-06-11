@@ -19,7 +19,7 @@ Future<void> registerServices() async {
   getIt.registerSingleton<AuthService>(
     AuthService(),
   );
-  //getIt.registerSingleton<NavigationService>(NavigationService());
+  getIt.registerSingleton<NavigationService>(NavigationService());
   //getIt.registerSingleton<AlertService>(AlertService());
   //getIt.registerSingleton<MediaService>(MediaService());
   // getIt.registerSingleton<StorageService>(StorageService());

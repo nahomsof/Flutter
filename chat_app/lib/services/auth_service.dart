@@ -7,19 +7,18 @@ class AuthService {
     return _user;
   }
 
-  AuthService() {
-    Future<bool> login(String email, String password) async {
-      try {
-        final credential = await _firebaseAuth.signInWithEmailAndPassword(
-            email: email, password: password);
-        if (credential.user != null) {
-          _user = credential.user;
-          return true;
-        }
-      } catch (e) {
-        print(e);
+  AuthService() {}
+  Future<bool> login(String email, String password) async {
+    try {
+      final credential = await _firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: password);
+      if (credential.user != null) {
+        _user = credential.user;
+        return true;
       }
-      return false;
+    } catch (e) {
+      print(e);
     }
+    return false;
   }
 }
