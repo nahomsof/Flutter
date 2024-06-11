@@ -1,4 +1,4 @@
-import 'package:chat_app/model/user_profile.dart';
+/*import 'package:chat_app/model/user_profile.dart';
 import 'package:chat_app/pages/chat_page.dart';
 import 'package:chat_app/services/alert_service.dart';
 import 'package:chat_app/services/auth_service.dart';
@@ -111,3 +111,4 @@ class _HomePageState extends State<HomePage> {
         });
   }
 }
+*/

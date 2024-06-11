@@ -49,7 +49,10 @@ class _LoginPageState extends State<LoginPage> {
         vertical: 20.0,
       ),
       child: Column(
-        children: [_headerText(), _loginForm(), _createAnAccountLink()],
+        children: [
+          _headerText(),
+          _loginForm(), /*_createAnAccountLink()*/
+        ],
       ),
     ));
   }
@@ -89,13 +92,13 @@ class _LoginPageState extends State<LoginPage> {
         vertical: MediaQuery.sizeOf(context).height * 0.05,
       ),
       child: Form(
-        key: _loginFormKey,
+        //key: _loginFormKey,
         child: Column(
           children: [
             CustomFormField(
               onSaved: (value) {
                 setState(() {
-                  email = value;
+                  // email = value;
                 });
               },
               validationRegEx: EMAIL_VALIDATION_REGEX,
@@ -108,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
             CustomFormField(
               onSaved: (value) {
                 setState(() {
-                  password = value;
+                  // password = value;
                 });
               },
               obsecureText: true,
@@ -116,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
               height: MediaQuery.sizeOf(context).height * 0.1,
               hintText: "Password",
             ),
-            _loginButton(),
+            //_loginButton(),
           ],
         ),
       ),
@@ -152,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _createAnAccountLink() {
+  /*Widget _createAnAccountLink() {
     return Expanded(
         child: Row(
       mainAxisSize: MainAxisSize.max,
@@ -171,5 +174,5 @@ class _LoginPageState extends State<LoginPage> {
         )
       ],
     ));
-  }
+  }*/
 }

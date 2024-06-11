@@ -9,8 +9,8 @@ class NavigationService {
 
   final Map<String, Widget Function(BuildContext)> _routes = {
     "/login": (context) => LoginPage(),
-    "/home": (context) => HomePage(),
-    "/register": (context) => RegisterPage(),
+    // "/home": (context) => HomePage(),
+    //"/register": (context) => RegisterPage(),
   };
   GlobalKey<NavigatorState>? get navigatorKey {
     return _navigatorKey;

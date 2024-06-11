@@ -5,6 +5,7 @@ import 'package:chat_app/services/navigation_service.dart';
 import 'package:chat_app/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -15,7 +16,7 @@ void main() async {
 Future<void> setup() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupFirebase();
-  await registerServices();
+  //await registerServices();
 }
 
 class MyApp extends StatelessWidget {
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.blue,
         ),
         useMaterial3: true,
-        //textTheme: GoogleFonts.monntserraTextTheme(),
+        textTheme: GoogleFonts.montserratTextTheme(),
       ),
       //initialRoute: _authService.user != null ? "/home" : "/login",
       // routes: _navigationService.routes,

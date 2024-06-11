@@ -1,5 +1,4 @@
-import 'dart:io';
-
+/*
 import 'package:chat_app/consts.dart';
 import 'package:chat_app/model/user_profile.dart';
 import 'package:chat_app/services/alert_service.dart';
@@ -237,3 +236,4 @@ class _RegisterPageState extends State<RegisterPage> {
     ));
   }
 }
+*/

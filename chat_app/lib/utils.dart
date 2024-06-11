@@ -14,21 +14,22 @@ Future<void> setupFirebase() async {
   );
 }
 
-Future<void> registerServices() async {
+/*Future<void> registerServices() async {
   final GetIt getIt = GetIt.instance;
   getIt.registerSingleton<AuthService>(
     AuthService(),
   );
-  getIt.registerSingleton<NavigationService>(NavigationService());
-  getIt.registerSingleton<AlertService>(AlertService());
-  getIt.registerSingleton<MediaService>(MediaService());
-  getIt.registerSingleton<StorageService>(StorageService());
-  getIt.registerSingleton<DatabaseService>(DatabaseService());
-}
+  //getIt.registerSingleton<NavigationService>(NavigationService());
+  //getIt.registerSingleton<AlertService>(AlertService());
+  //getIt.registerSingleton<MediaService>(MediaService());
+ // getIt.registerSingleton<StorageService>(StorageService());
+ // getIt.registerSingleton<DatabaseService>(DatabaseService());
+//}
 
-String generateChatID({required String uid1, required String uid2}) {
+//String generateChatID({required String uid1, required String uid2}) {
   List uids = [uid1, uid2];
   uids.sort();
   String chatID = uids.fold("", (id, uid) => "$id$uid");
   return chatID;
 }
+*/

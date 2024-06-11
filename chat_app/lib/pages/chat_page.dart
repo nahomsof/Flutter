@@ -1,6 +1,5 @@
-import 'dart:io';
 
-import 'package:chat_app/model/chat.dart';
+/*import 'package:chat_app/model/chat.dart';
 import 'package:chat_app/model/message.dart';
 import 'package:chat_app/model/user_profile.dart';
 import 'package:chat_app/services/auth_service.dart';
@@ -148,3 +147,4 @@ class _ChatPageState extends State<ChatPage> {
         ));
   }
 }
+*/

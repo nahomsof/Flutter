@@ -1,4 +1,4 @@
-import 'package:chat_app/model/chat.dart';
+/*import 'package:chat_app/model/chat.dart';
 import 'package:chat_app/model/message.dart';
 import 'package:chat_app/model/user_profile.dart';
 import 'package:chat_app/services/auth_service.dart';
@@ -77,4 +77,4 @@ class DatabaseService {
     return _chatsCollection?.doc(chatID).snapshots()
         as Stream<DocumentSnapshot<Chat>>;
   }
-}
+}*/
