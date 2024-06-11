@@ -14,24 +14,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final GetIt _getIt = GetIt.instance;
-  final GlobalKey<FormState> _loginFormKey = GlobalKey();
-
-  late AuthService _authService;
-  late NavigationService _navigationService;
-  late AlertService _alertService;
-
-  String? email, password;
-
   @override
-  void initState() {
-    //ToDO: implenent initState
-    super.initState();
-    _authService = _getIt.get<AuthService>();
-    _navigationService = _getIt.get<NavigationService>();
-    _alertService = _getIt.get<AlertService>();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,53 +109,16 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _loginButton() {
-    return SizedBox(
-      width: MediaQuery.sizeOf(context).width,
-      child: MaterialButton(
-        onPressed: () async {
-          if (_loginFormKey.currentState?.validate() ?? false) {
-            _loginFormKey.currentState?.save();
-            bool result = await _authService.login(email!, password!);
-            if (result) {
-              if (result) {
-                _navigationService.pushReplacementNamed("/home");
-              }
-            } else {
-              _alertService.showToast(
-                text: "Failed to login, Please try again!",
-                icon: Icons.error,
-              );
-            }
-          }
-        },
-        color: Theme.of(context).colorScheme.primary,
-        child: const Text(
-          "Login",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-  }
-
-  /*Widget _createAnAccountLink() {
-    return Expanded(
+  Widget _createAnAccountLink() {
+    return const Expanded(
         child: Row(
-      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        const Text("Don't have an account? "),
-        GestureDetector(
-          onTap: () {
-            _navigationService.pushNamed("/register");
-          },
-          child: const Text(
-            "Sign Up",
-            style: TextStyle(fontWeight: FontWeight.w800),
-          ),
-        )
+        Text("Don't have an account?"),
+        Text("Sign Up", style: TextStyle(fontWeight: FontWeight.w800))
       ],
     ));
-  }*/
+  }
 }
