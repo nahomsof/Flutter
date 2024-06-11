@@ -15,7 +15,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  @override
+  final GlobalKey<FormState> _loginFormKey = GlobalKey();
+  String? email, password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _loginForm() {
     return Container(
+      key: _loginFormKey,
       height: MediaQuery.sizeOf(context).height * 0.40,
       margin: EdgeInsets.symmetric(
         vertical: MediaQuery.sizeOf(context).height * 0.05,
@@ -79,10 +82,13 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomFormField(
+              validationRegEx: EMAIL_VALIDATION_REGEX,
               hintText: "Email",
               height: MediaQuery.sizeOf(context).height * 0.1,
             ),
             CustomFormField(
+              obsecureText: true,
+              validationRegEx: PASSWORD_VALIDATION_REGEX,
               hintText: "Password",
               height: MediaQuery.sizeOf(context).height * 0.1,
             ),
@@ -97,7 +103,11 @@ class _LoginPageState extends State<LoginPage> {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          if (_loginFormKey.currentState?.validate() ?? false) {
+            _loginFormKey.currentState?.save();
+          }
+        },
         color: Theme.of(context).colorScheme.primary,
         child: const Text(
           "Login",
