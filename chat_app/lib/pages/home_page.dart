@@ -1,9 +1,11 @@
+import 'package:chat_app/model/user_profile.dart';
+import 'package:chat_app/pages/chat_page.dart';
 import 'package:chat_app/services/alert_service.dart';
 import 'package:chat_app/services/auth_service.dart';
+import 'package:chat_app/services/database_service.dart';
 
 import 'package:chat_app/services/navigation_service.dart';
-
-import 'package:dash_chat_2/dash_chat_2.dart';
+import 'package:chat_app/widgets/chat_tiles.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -19,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   late AuthService _authService;
   late NavigationService _navigationService;
   late AlertService _alertService;
-  // late DatabaseService _databaseService;
+  late DatabaseService _databaseService;
 
   @override
   void initState() {
@@ -27,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     _authService = _getIt.get<AuthService>();
     _navigationService = _getIt.get<NavigationService>();
     _alertService = _getIt.get<AlertService>();
-    // _databaseService = _getIt.get<DatabaseService>();
+    _databaseService = _getIt.get<DatabaseService>();
   }
 
   @override
@@ -52,11 +54,11 @@ class _HomePageState extends State<HomePage> {
               ))
         ],
       ),
-      // body: _buildUI(),
+      body: _buildUI(),
     );
   }
 
-/*  Widget _buildUI() {
+  Widget _buildUI() {
     return SafeArea(
         child: Padding(
       padding: const EdgeInsets.symmetric(
@@ -107,5 +109,5 @@ class _HomePageState extends State<HomePage> {
             child: CircularProgressIndicator(),
           );
         });
-  }*/
+  }
 }

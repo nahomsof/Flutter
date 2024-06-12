@@ -4,6 +4,7 @@ import 'package:chat_app/services/auth_service.dart';
 import 'package:chat_app/services/navigation_service.dart';
 import 'package:chat_app/widgets/custom_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 
 class LoginPage extends StatefulWidget {
@@ -145,16 +146,21 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _createAnAccountLink() {
-    return const Expanded(
+    return Expanded(
         child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text("Don't have an account? "),
-        Text(
-          "Sign Up",
-          style: TextStyle(fontWeight: FontWeight.w800),
+        GestureDetector(
+          onTap: () {
+            _navigationService.pushNamed("/register");
+          },
+          child: Text(
+            "Sign Up",
+            style: TextStyle(fontWeight: FontWeight.w800),
+          ),
         )
       ],
     ));
