@@ -73,8 +73,8 @@ class _ChatPageState extends State<ChatPage> {
               inputOptions: InputOptions(
                   alwaysShowSend: true, trailing: [_mediaMessageButton()]),
               currentUser: currentUser!,
-              onSend: (message) {},
-              messages: []);
+              onSend: _sendMessage,
+              messages: messages);
         });
   }
 
