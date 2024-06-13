@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 void main() {
   runApp(other());
@@ -31,9 +32,8 @@ class other extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            excludeHeaderSemantics: true,
-            backgroundColor: Colors.amber,
+          drawer: Drawer(
+            backgroundColor: Colors.red,
           ),
           body: Center(
             child: Container(
