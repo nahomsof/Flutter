@@ -31,9 +31,20 @@ class other extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            excludeHeaderSemantics: true,
+            backgroundColor: Colors.amber,
+          ),
           body: Center(
-            child: Text("This could be good"),
+            child: Container(
+              width: 200,
+              height: 100,
+              padding: EdgeInsets.all(25),
+              color: Colors.pink,
+              child: Center(
+                child: Text("This could be good"),
+              ),
+            ),
           ),
         ));
   }
