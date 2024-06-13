@@ -32,7 +32,9 @@ class other extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            title: Text("New"),
+          ),
           drawer: Drawer(),
           body: Center(
             child: Container(
