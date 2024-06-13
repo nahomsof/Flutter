@@ -16,11 +16,11 @@ class ex2 extends StatelessWidget {
             ),
             body: GridView.builder(
                 itemCount: 100,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4),
                 itemBuilder: (context, index) => Container(
                       color: Colors.deepPurple,
-                      margin: EdgeInsets.all(3),
+                      margin: const EdgeInsets.all(3),
                     ))));
   }
 }
