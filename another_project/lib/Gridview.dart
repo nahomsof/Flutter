@@ -28,8 +28,6 @@ class ex2 extends StatelessWidget {
 class other extends StatelessWidget {
   other({super.key});
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Text("this cooud be good"),
-    );
+    return MaterialApp(home: Scaffold);
   }
 }
