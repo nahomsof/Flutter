@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(ex2());
+  runApp(other());
 }
 
 class ex2 extends StatelessWidget {
@@ -22,5 +22,14 @@ class ex2 extends StatelessWidget {
                       color: Colors.deepPurple,
                       margin: const EdgeInsets.all(3),
                     ))));
+  }
+}
+
+class other extends StatelessWidget {
+  other({super.key});
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Text("this cooud be good"),
+    );
   }
 }
