@@ -5,7 +5,7 @@ void main() {
 }
 
 class Currentap extends StatelessWidget {
-  Currentap({super.key});
+  const Currentap({super.key});
   Widget build(BuildContext context) {
     return MaterialApp(
       home: _MyHomepage(),
