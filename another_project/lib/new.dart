@@ -24,11 +24,16 @@ class newwedget extends StatefulWidget {
 
 class _newwedgetState extends State<newwedget> {
   int _incri = 0;
+  String changed = "You just get odd number";
 
   @override
   void incriment() {
     setState(() {
       _incri += 1;
+      if (_incri == 0) {
+        changed = "you just get 0";
+      }
+      changed = "You just get even number";
     });
   }
 
@@ -37,7 +42,6 @@ class _newwedgetState extends State<newwedget> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: incriment,
-        
         child: Icon(Icons.add),
       ),
       body: Center(
@@ -45,7 +49,11 @@ class _newwedgetState extends State<newwedget> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Incrimeting value"), Text(_incri.toString())],
+          children: [
+            Text("Incrimeting value"),
+            Text(_incri.toString()),
+            Text(changed)
+          ],
         ),
       ),
     );
