@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -33,17 +35,24 @@ class other extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: Text("New"),
+            backgroundColor: Colors.amber,
+            title: Text(
+              "New",
+            ),
           ),
-          drawer: Drawer(),
-          body: Center(
-            child: Container(
-              width: 200,
-              height: 100,
-              padding: EdgeInsets.all(25),
-              color: Colors.pink,
-              child: Center(
-                child: Text("This could be good"),
+          body: const Center(
+            child: Material(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "This must be good",
+                    selectionColor: Colors.amber,
+                  ),
+                  Text("this must be good again")
+                ],
               ),
             ),
           ),
