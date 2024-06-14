@@ -26,9 +26,8 @@ class _MyHomepage extends StatelessWidget {
 }
 
 Widget buildTitleText() {
-  return Text(
+  return const Text(
     "My Pet Shop",
-    textScaleFactor: 3.0,
     textAlign: TextAlign.center,
   );
 }
@@ -37,7 +36,7 @@ Widget buildRoundedBox(String label, {double height = 88.0}) {
   return Container(
     height: height,
     width: 88.0,
-    alignment: Alignment(0.0, 0.0),
+    alignment: const Alignment(0.0, 0.0),
     decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.black),
