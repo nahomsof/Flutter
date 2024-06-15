@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Currentap());
+  runApp(const Currentap());
 }
 
 class Currentap extends StatelessWidget {
   const Currentap({super.key});
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       home: _MyHomepage(),
     );
   }
 }
 
 class _MyHomepage extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.grey[400],
@@ -55,7 +56,7 @@ Widget buildColumn(BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: <Widget>[
       buildTitleText(),
-      SizedBox(
+      const SizedBox(
         height: 20,
       ),
       buildRoundedBox("Sale Today", height: 150.0)
