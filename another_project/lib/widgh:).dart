@@ -21,7 +21,7 @@ class _MyHomepage extends StatelessWidget {
       color: Colors.grey[400],
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: buildColumn(),
+        child: buildColumn(context),
       ),
     );
   }
@@ -29,7 +29,7 @@ class _MyHomepage extends StatelessWidget {
 
 Widget buildTitleText() {
   return const Text(
-    "My Pet ",
+    "My Pet shop",
     textAlign: TextAlign.center,
   );
 }
@@ -50,7 +50,7 @@ Widget buildRoundedBox(String label, {double height = 88.0}) {
   );
 }
 
-Widget buildColumn() {
+Widget buildColumn(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.stretch,
