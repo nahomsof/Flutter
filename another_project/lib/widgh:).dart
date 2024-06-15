@@ -8,7 +8,7 @@ class Currentap extends StatelessWidget {
   const Currentap({super.key});
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       home: _MyHomepage(),
     );
   }
@@ -29,7 +29,7 @@ class _MyHomepage extends StatelessWidget {
 
 Widget buildTitleText() {
   return const Text(
-    "My Pet Shop",
+    "My Pet",
     textAlign: TextAlign.center,
   );
 }
