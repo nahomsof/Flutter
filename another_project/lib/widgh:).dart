@@ -8,6 +8,7 @@ class Currentap extends StatelessWidget {
   const Currentap({super.key});
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: _MyHomepage(),
     );
   }
@@ -18,7 +19,7 @@ class _MyHomepage extends StatelessWidget {
     return Material(
       color: Colors.grey[400],
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: buildColumn(context),
       ),
     );
