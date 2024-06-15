@@ -20,7 +20,7 @@ class _MyHomepage extends StatelessWidget {
     return Material(
       color: Colors.grey[400],
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 40.0),
         child: buildColumn(context),
       ),
     );
