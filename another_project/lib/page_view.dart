@@ -15,7 +15,7 @@ class view extends StatelessWidget {
         home: PageView(
           scrollDirection: Axis.vertical,
           controller: _controller,
-          children: [Pageone(), Pagetwo()],
+          children: [Pageone("this must be good"), Pagetwo()],
         ));
   }
 }
