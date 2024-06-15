@@ -29,7 +29,7 @@ class _MyHomepage extends StatelessWidget {
 
 Widget buildTitleText() {
   return const Text(
-    "My Pet shop",
+    "My Pet ",
     textAlign: TextAlign.center,
   );
 }
