@@ -56,8 +56,8 @@ Widget buildColumn(BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: <Widget>[
       buildTitleText(),
-      const SizedBox(height: 20)
-      buildRoundedBox("Sale Today", height: 150.0
+      const SizedBox(height: 20),
+      buildRoundedBox("Sale Today", height: 150.0)
     ],
   );
 }
