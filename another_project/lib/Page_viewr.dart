@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 
-class PageViewer extends StatelessWidget {
-  const PageViewer({super.key});
+class Pageone extends StatelessWidget {
+  const Pageone({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.blue,
+    );
+  }
+}
+
+class Pagetwo extends StatelessWidget {
+  const Pagetwo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.yellow,
+    );
   }
 }

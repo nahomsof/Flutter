@@ -1,3 +1,4 @@
+import "package:another_project/Page_viewr.dart";
 import "package:flutter/material.dart";
 
 void main() {
@@ -10,10 +11,11 @@ class view extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: PageView(
-      scrollDirection: Axis.vertical,
-      controller: _controller,
-      children: [],
-    ));
+          scrollDirection: Axis.vertical,
+          controller: _controller,
+          children: [Pageone(), Pagetwo()],
+        ));
   }
 }
