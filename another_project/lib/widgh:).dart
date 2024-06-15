@@ -57,7 +57,7 @@ Widget buildColumn(BuildContext context) {
     children: <Widget>[
       buildTitleText(),
       const SizedBox(height: 20),
-      buildRoundedBox("Sale Today", height: 150.0)
+      buildRoundedBox("Sale Today", height: 150.0
     ],
   );
 }
