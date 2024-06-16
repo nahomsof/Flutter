@@ -11,6 +11,7 @@ class Newapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -34,10 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Are you compatible with Doris?"),
+        title: const Text("Are you compatible with Doris?"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           children: <Widget>[_buildAgeSwitch(), _buildResultArea()],
         ),
@@ -50,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       children: <Widget>[
         Switch(
             inactiveTrackColor: Colors.white,
+            activeTrackColor: Colors.green,
             value: _ageSwitchValue,
             onChanged: _updateAgeSwitch)
       ],
