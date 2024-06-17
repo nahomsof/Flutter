@@ -86,7 +86,7 @@ class _My_homeState extends State<My_home> {
 
   void _updateMessage() {
     setState(() {
-      _messageTour = _youAre + (_ageSwitchValue ? " " : "Not") + _compatible;
+      _messageTour = _youAre + (_ageSwitchValue ? " " : " Not ") + _compatible;
     });
   }
 }
