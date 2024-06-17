@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _updateAgeSwitch(bool newvalue) {
     setState(() {
       _ageSwitchValue = newvalue;
-      _messageTour = _youAre + (_ageSwitchValue ? " " : "NOT") + _compatible;
+      _messageTour = _youAre + (_ageSwitchValue ? " " : " NOT ") + _compatible;
     });
   }
 }
