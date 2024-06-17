@@ -45,6 +45,7 @@ class _My_homeState extends State<My_home> {
                 height: 10,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _button(),
                   SizedBox(
@@ -73,7 +74,7 @@ class _My_homeState extends State<My_home> {
   Widget _button() {
     return Row(
       children: <Widget>[
-        ElevatedButton(onPressed: _updateMessage, child: Text("Switch"))
+        ElevatedButton(onPressed: _updateMessage, child: const Text("Switch"))
       ],
     );
   }
