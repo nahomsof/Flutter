@@ -41,14 +41,14 @@ class _My_homeState extends State<My_home> {
           child: Column(
             children: [
               _switch(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _button(),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   _printWord()

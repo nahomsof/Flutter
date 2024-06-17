@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:another_project/Todo_App/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +31,7 @@ const _compatible = "compatibel with\nDoris D. Developer";
 
 class _MyHomePageState extends State<MyHomePage> {
   bool _ageSwitchValue = false;
+  double _loveFlutter = 1.0;
   String _messageTour = "$_youAre Not $_compatible";
 
   @override
