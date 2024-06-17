@@ -29,6 +29,7 @@ class _HomePage2State extends State<HomePage2> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Are yo ucompative with Doris"),
