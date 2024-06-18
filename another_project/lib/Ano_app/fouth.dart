@@ -45,20 +45,21 @@ class _HomePage3State extends State<HomePage3> {
         appBar: AppBar(
           title: Text("Are you compatible with lrving"),
         ),
-        body: Padding(
-          padding: EdgeInsets.all(12),
-          child: Column(
-            children: [
-              _buildnameTextField(),
-              SizedBox(
-                height: 10,
-              ),
-              _buildIncomeTextField(),
-              Row(
-                children: [_button(), _text()],
-              )
-            ],
-          ),
+        body: Column(
+          children: [
+            _buildnameTextField(),
+            SizedBox(
+              height: 10,
+            ),
+            _buildIncomeTextField(),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [_button(), _text()],
+            )
+          ],
         ),
       ),
     );
@@ -84,10 +85,10 @@ class _HomePage3State extends State<HomePage3> {
 
   Widget _buildIncomeTextField() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       child: TextField(
-        controller: _nameFieldController,
-        decoration: _builddecration("Your name"),
+        controller: _incomeFieldController,
+        decoration: _builddecration("Your income"),
         keyboardType: TextInputType.number,
       ),
     );
