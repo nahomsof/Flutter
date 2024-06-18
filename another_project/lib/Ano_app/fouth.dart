@@ -41,6 +41,7 @@ class _HomePage3State extends State<HomePage3> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Are you compatible with lrving"),
