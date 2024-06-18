@@ -49,11 +49,11 @@ class _HomePage3State extends State<HomePage3> {
         body: Column(
           children: [
             _buildnameTextField(),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             _buildIncomeTextField(),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -105,11 +105,8 @@ class _HomePage3State extends State<HomePage3> {
   void _updateResult() {
     bool _richuser = int.parse(_incomeFieldController!.text) >= 10000;
     setState(() {
-      _messagetouser = _nameFieldController!.text +
-          "\n" +
-          _youAre +
-          (_richuser ? " " : " Not ") +
-          _compatible;
+      _messagetouser =
+          "${_nameFieldController!.text}\n$_youAre${_richuser ? " " : " Not "}$_compatible";
     });
   }
 
@@ -123,7 +120,7 @@ class _HomePage3State extends State<HomePage3> {
   InputDecoration _builddecration(String label) {
     return InputDecoration(
         labelText: label,
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))));
   }
 }
