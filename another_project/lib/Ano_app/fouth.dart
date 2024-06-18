@@ -12,7 +12,7 @@ class Fouth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomePage3();
+    return const HomePage3();
   }
 }
 
@@ -68,7 +68,7 @@ class _HomePage3State extends State<HomePage3> {
 
   Widget _buildnameTextField() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       child: TextField(
         controller: _nameFieldController,
         decoration: _builddecration("Your name"),
