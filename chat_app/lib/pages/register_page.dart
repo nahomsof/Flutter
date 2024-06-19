@@ -107,6 +107,9 @@ class _RegisterPageState extends State<RegisterPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _pfpSelctionField(),
+            SizedBox(
+              height: 10,
+            ),
             CustomFormField(
                 hintText: "Name",
                 height: MediaQuery.sizeOf(context).height * 0.1,
