@@ -87,7 +87,7 @@ class _HomepageState extends State<Homepage> {
 
   void _updateText() {
     setState(() {
-      _messageTouser = "You selected${shorten(_genderRadioValue!)}.";
+      _messageTouser = "You selected ${shorten(_genderRadioValue!)}.";
     });
   }
 }
