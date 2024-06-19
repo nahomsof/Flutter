@@ -55,17 +55,19 @@ class _RegisterPageState extends State<RegisterPage> {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
-        child: Column(
-          children: [
-            _headerText(),
-            if (!isLoading) _registerForm(),
-            if (!isLoading) _loginAccountLink(),
-            if (isLoading)
-              const Expanded(
-                  child: Center(
-                child: CircularProgressIndicator(),
-              ))
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _headerText(),
+              if (!isLoading) _registerForm(),
+              if (!isLoading) _loginAccountLink(),
+              if (isLoading)
+                const Expanded(
+                    child: Center(
+                  child: CircularProgressIndicator(),
+                ))
+            ],
+          ),
         ),
       ),
     );
@@ -94,54 +96,52 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Widget _registerForm() {
-    return SingleChildScrollView(
-      child: Container(
-        height: MediaQuery.sizeOf(context).height * 0.60,
-        margin: EdgeInsets.symmetric(
-          vertical: MediaQuery.sizeOf(context).height * 0.05,
-        ),
-        child: Form(
-          key: _registerFormKey,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _pfpSelctionField(),
-              SizedBox(
-                height: 10,
-              ),
-              CustomFormField(
-                  hintText: "Name",
-                  height: MediaQuery.sizeOf(context).height * 0.1,
-                  validationRegEx: NAME_VALIDATION_REGEX,
-                  onSaved: (value) {
-                    setState(() {
-                      name = value;
-                    });
-                  }),
-              CustomFormField(
-                  hintText: "Email",
-                  height: MediaQuery.sizeOf(context).height * 0.1,
-                  validationRegEx: EMAIL_VALIDATION_REGEX,
-                  onSaved: (value) {
-                    setState(() {
-                      email = value;
-                    });
-                  }),
-              CustomFormField(
-                  obsecureText: true,
-                  hintText: "Password",
-                  height: MediaQuery.sizeOf(context).height * 0.1,
-                  validationRegEx: PASSWORD_VALIDATION_REGEX,
-                  onSaved: (value) {
-                    setState(() {
-                      password = value;
-                    });
-                  }),
-              _registerButton(),
-            ],
-          ),
+    return Container(
+      height: MediaQuery.sizeOf(context).height * 0.60,
+      margin: EdgeInsets.symmetric(
+        vertical: MediaQuery.sizeOf(context).height * 0.05,
+      ),
+      child: Form(
+        key: _registerFormKey,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _pfpSelctionField(),
+            SizedBox(
+              height: 10,
+            ),
+            CustomFormField(
+                hintText: "Name",
+                height: MediaQuery.sizeOf(context).height * 0.1,
+                validationRegEx: NAME_VALIDATION_REGEX,
+                onSaved: (value) {
+                  setState(() {
+                    name = value;
+                  });
+                }),
+            CustomFormField(
+                hintText: "Email",
+                height: MediaQuery.sizeOf(context).height * 0.1,
+                validationRegEx: EMAIL_VALIDATION_REGEX,
+                onSaved: (value) {
+                  setState(() {
+                    email = value;
+                  });
+                }),
+            CustomFormField(
+                obsecureText: true,
+                hintText: "Password",
+                height: MediaQuery.sizeOf(context).height * 0.1,
+                validationRegEx: PASSWORD_VALIDATION_REGEX,
+                onSaved: (value) {
+                  setState(() {
+                    password = value;
+                  });
+                }),
+            _registerButton(),
+          ],
         ),
       ),
     );
