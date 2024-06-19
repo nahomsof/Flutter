@@ -28,18 +28,41 @@ enum Relationship {
   Marriage,
 }
 
-Map<Relationship, String> show = {
+Map<Relationship?, String?> show = {
   Relationship.Friend: "Friend",
   Relationship.OneDate: "One date",
   Relationship.Ongoing: "Ongoing relationship",
   Relationship.Committed: "Committed relationship",
   Relationship.Marriage: "Marriage",
 };
+List<DropdownMenuItem<Relationship>> _relationshipsList = [
+  DropdownMenuItem(
+    value: Relationship.Friend,
+    child: Text(show[Relationship.Friend]!),
+  ),
+  DropdownMenuItem(
+    value: Relationship.OneDate,
+    child: Text(show[Relationship.OneDate]!),
+  ),
+  DropdownMenuItem(
+    value: Relationship.Ongoing,
+    child: Text(show[Relationship.Ongoing]!),
+  ),
+  DropdownMenuItem(
+    value: Relationship.Committed,
+    child: Text(show[Relationship.Committed]!),
+  ),
+  DropdownMenuItem(
+    value: Relationship.Marriage,
+    child: Text(show[Relationship.Marriage]!),
+  ),
+];
 
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Are you compatible with Hilda"),
