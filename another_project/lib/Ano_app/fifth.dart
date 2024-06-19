@@ -33,7 +33,7 @@ class _HomepageState extends State<Homepage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Are you compatible"),
+          title: const Text("Are you compatible"),
           centerTitle: true,
         ),
         body: Padding(
