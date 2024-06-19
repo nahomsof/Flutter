@@ -70,7 +70,7 @@ class _HomepageState extends State<Homepage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ElevatedButton(onPressed: _updateText, child: Text('Switch')),
+        ElevatedButton(onPressed: _updateText, child: Text('Submit')),
         Text(
           _messageTouser,
           textAlign: TextAlign.center,
