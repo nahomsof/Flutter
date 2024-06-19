@@ -30,12 +30,64 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Are you compatible"),
           centerTitle: true,
         ),
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [_buildRadiovalue(), _buildAreaResult()],
+          ),
+        ),
       ),
     );
+  }
+
+  Widget _buildRadiovalue() {
+    return Row(
+      children: [
+        Text(shorten(Gender.Female)),
+        Radio(
+            value: Gender.Female,
+            groupValue: _genderRadioValue,
+            onChanged: _updateGenderRadio),
+        const SizedBox(
+          width: 25.0,
+        ),
+        Text(shorten(Gender.Male)),
+        Radio(
+            value: Gender.Male,
+            groupValue: _genderRadioValue,
+            onChanged: _updateGenderRadio),
+      ],
+    );
+  }
+
+  Widget _buildAreaResult() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ElevatedButton(onPressed: _updateText, child: Text('Switch')),
+        Text(
+          _messageTouser,
+          textAlign: TextAlign.center,
+        )
+      ],
+    );
+  }
+
+  void _updateGenderRadio(Gender? newvalue) {
+    setState(() {
+      _genderRadioValue = newvalue;
+    });
+  }
+
+  void _updateText() {
+    setState(() {
+      _messageTouser = "You selected${shorten(_genderRadioValue!)}.";
+    });
   }
 }
