@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Fifth());
+  runApp(const Fifth());
 }
 
 class Fifth extends StatelessWidget {
@@ -9,9 +9,10 @@ class Fifth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Homepage();
+    return const Homepage();
   }
 }
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -19,9 +20,22 @@ class Homepage extends StatefulWidget {
   State<Homepage> createState() => _HomepageState();
 }
 
+enum Gender { Female, Male }
+
+String _messageTouser = "";
+Gender? _genderRadioValue;
+String shorten(Gender gender) => gender.toString().replaceAll("Gender.", "");
+
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Are you compatible"),
+          centerTitle: true,
+        ),
+      ),
+    );
   }
 }
