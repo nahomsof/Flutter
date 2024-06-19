@@ -70,9 +70,7 @@ class _HomepageState extends State<Homepage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ElevatedButton(
-            onPressed: _genderRadioValue != null ? _updateText : null,
-            child: Text('Submit')),
+        ElevatedButton(onPressed: _updateText, child: Text('Submit')),
         Text(
           _messageTouser,
           textAlign: TextAlign.center,
@@ -89,7 +87,12 @@ class _HomepageState extends State<Homepage> {
 
   void _updateText() {
     setState(() {
-      _messageTouser = "You selected ${shorten(_genderRadioValue!)}.";
+      if (_genderRadioValue != null) {
+        _messageTouser =
+            _messageTouser = "You selected ${shorten(_genderRadioValue!)}.";
+      } else {
+        _messageTouser = "You selected nothing yet.";
+      }
     });
   }
 }
