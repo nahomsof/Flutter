@@ -46,6 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: _buildUI(),
     );
   }
@@ -60,11 +61,6 @@ class _RegisterPageState extends State<RegisterPage> {
               _headerText(),
               if (!isLoading) _registerForm(),
               if (!isLoading) _loginAccountLink(),
-              if (isLoading)
-                const Expanded(
-                    child: Center(
-                  child: CircularProgressIndicator(),
-                ))
             ],
           ),
         ),
