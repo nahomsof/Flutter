@@ -46,29 +46,25 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: _buildUI(),
     );
   }
 
   Widget _buildUI() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
-          child: Column(
-            children: [
-              _headerText(),
-              if (!isLoading) _registerForm(),
-              if (!isLoading) _loginAccountLink(),
-              if (isLoading)
-                const Expanded(
-                    child: Center(
-                  child: CircularProgressIndicator(),
-                ))
-            ],
-          ),
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+        child: Column(
+          children: [
+            _headerText(),
+            if (!isLoading) _registerForm(),
+            if (!isLoading) _loginAccountLink(),
+            if (isLoading)
+              const Expanded(
+                  child: Center(
+                child: CircularProgressIndicator(),
+              ))
+          ],
         ),
       ),
     );
@@ -110,7 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _pfpSelctionField(),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             CustomFormField(
