@@ -45,29 +45,30 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: _buildUI(),
-      ),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: _buildUI(),
     );
   }
 
   Widget _buildUI() {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
-        child: Column(
-          children: [
-            _headerText(),
-            if (!isLoading) _registerForm(),
-            if (!isLoading) _loginAccountLink(),
-            if (isLoading)
-              const Expanded(
-                  child: Center(
-                child: CircularProgressIndicator(),
-              ))
-          ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+          child: Column(
+            children: [
+              _headerText(),
+              if (!isLoading) _registerForm(),
+              if (!isLoading) _loginAccountLink(),
+              if (isLoading)
+                const Expanded(
+                    child: Center(
+                  child: CircularProgressIndicator(),
+                ))
+            ],
+          ),
         ),
       ),
     );
