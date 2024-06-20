@@ -54,17 +54,19 @@ class _RegisterPageState extends State<RegisterPage> {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
-        child: Column(
-          children: [
-            _headerText(),
-            if (!isLoading) _registerForm(),
-            if (!isLoading) _loginAccountLink(),
-            if (isLoading)
-              const Expanded(
-                  child: Center(
-                child: CircularProgressIndicator(),
-              ))
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _headerText(),
+              if (!isLoading) _registerForm(),
+              if (!isLoading) _loginAccountLink(),
+              if (isLoading)
+                const Expanded(
+                    child: Center(
+                  child: CircularProgressIndicator(),
+                ))
+            ],
+          ),
         ),
       ),
     );
