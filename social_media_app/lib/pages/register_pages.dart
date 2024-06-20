@@ -21,107 +21,105 @@ class RegisterPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
-          child: (
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.person,
-                  size: 80,
-                  color: Theme.of(context).colorScheme.inversePrimary,
-                ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.person,
+                size: 80,
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
 
-                const SizedBox(
-                  height: 25,
-                ),
+              const SizedBox(
+                height: 25,
+              ),
 
-                //app name
-                const Text(
-                  "M I N I M A L",
-                  style: TextStyle(fontSize: 20),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
+              //app name
+              const Text(
+                "M I N I M A L",
+                style: TextStyle(fontSize: 20),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
 
-                MyTextField(
-                    hintText: "Username",
-                    controller: _username_Controller,
-                    obscureText: false),
-                const SizedBox(
-                  height: 10,
-                ),
-                MyTextField(
-                    hintText: "Email",
-                    controller: emailController,
-                    obscureText: false),
-                const SizedBox(
-                  height: 10,
-                ),
-                MyTextField(
-                    hintText: "Password",
-                    controller: passwordControler,
-                    obscureText: true),
-                const SizedBox(
-                  height: 10,
-                ),
-                MyTextField(
-                    hintText: "Password",
-                    controller: passwordControler,
-                    obscureText: true),
-                const SizedBox(
-                  height: 10,
-                ),
-                MyTextField(
-                    hintText: "Password",
-                    controller: passwordControler,
-                    obscureText: true),
-                const SizedBox(
-                  height: 10,
-                ),
-                MyTextField(
-                    hintText: "Confirm Password",
-                    controller: config_passwordControler,
-                    obscureText: true),
+              MyTextField(
+                  hintText: "Username",
+                  controller: _username_Controller,
+                  obscureText: false),
+              const SizedBox(
+                height: 10,
+              ),
+              MyTextField(
+                  hintText: "Email",
+                  controller: emailController,
+                  obscureText: false),
+              const SizedBox(
+                height: 10,
+              ),
+              MyTextField(
+                  hintText: "Password",
+                  controller: passwordControler,
+                  obscureText: true),
+              const SizedBox(
+                height: 10,
+              ),
+              MyTextField(
+                  hintText: "Password",
+                  controller: passwordControler,
+                  obscureText: true),
+              const SizedBox(
+                height: 10,
+              ),
+              MyTextField(
+                  hintText: "Password",
+                  controller: passwordControler,
+                  obscureText: true),
+              const SizedBox(
+                height: 10,
+              ),
+              MyTextField(
+                  hintText: "Confirm Password",
+                  controller: config_passwordControler,
+                  obscureText: true),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.secondary),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "Forgot Password?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              MyButton(onTap: register, text: "Register"),
+
+              //don't have an account? Register here
+              const SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Already have an account?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary),
+                  ),
+                  GestureDetector(
+                    onTap: onTap,
+                    child: Text(
+                      "Login",
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                MyButton(onTap: register, text: "Register"),
-
-                //don't have an account? Register here
-                const SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Already have an account?",
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.inversePrimary),
-                    ),
-                    GestureDetector(
-                      onTap: onTap,
-                      child: Text(
-                        "Login",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),
