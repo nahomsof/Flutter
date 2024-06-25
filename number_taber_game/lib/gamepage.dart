@@ -12,6 +12,7 @@ class GamePage extends StatefulWidget {
 
 class _GamePageState extends State<GamePage> {
   late Timer timer;
+  int current_number = 1;
   int timelft = 10;
   bool isGameActive = false;
 
@@ -40,6 +41,12 @@ class _GamePageState extends State<GamePage> {
     });
   }
 
+  void _onButtonTap() {
+    setState(() {
+      current_number++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +67,16 @@ class _GamePageState extends State<GamePage> {
                 const SizedBox(
                   height: 10,
                 ),
+                if (isGameActive)
+                  Positioned(
+                    child: ElevatedButton(
+                      onPressed: _onButtonTap,
+                      child: Text(
+                        '$current_number',
+                        style: TextStyle(color: Colors.red, fontSize: 10),
+                      ),
+                    ),
+                  ),
                 Center(
                     child: ElevatedButton(
                   onPressed: _startGame,
