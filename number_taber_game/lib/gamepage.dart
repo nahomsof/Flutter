@@ -13,6 +13,7 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
   final Random _random = Random();
   late Timer timer;
+  int score = 1;
   int current_number = 1;
   int timelft = 10;
   bool isGameActive = false;
@@ -68,48 +69,47 @@ class _GamePageState extends State<GamePage> {
       body: Stack(
         children: [
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Time Left : $timelft',
-                  style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                if (isGameActive)
-                  Positioned(
-                    left: _buttonPosition.dx,
-                    top: _buttonPosition.dy,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(), backgroundColor: Colors.white),
-                      onPressed: _onButtonTap,
-                      child: Text(
-                        '$current_number',
-                        style: TextStyle(color: Colors.black, fontSize: 25),
-                      ),
-                    ),
-                  ),
-                if (!isGameActive)
-                  Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ElevatedButton(
-                          onPressed: _startGame,
-                          child: const Text('Start Game'),
-                        ),
-                      ],
-                    ),
-                  ),
-              ],
+            child: Text(
+              'Time Left: $timelft',
+              style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
             ),
           ),
+          if (isGameActive)
+            Positioned(
+              left: _buttonPosition.dx,
+              top: _buttonPosition.dy,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(), backgroundColor: Colors.white),
+                onPressed: _onButtonTap,
+                child: Text(
+                  '$current_number',
+                  style: TextStyle(color: Colors.black, fontSize: 25),
+                ),
+              ),
+            ),
+          if (!isGameActive)
+            Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Score: $score',
+                    style: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  ElevatedButton(
+                    onPressed: _startGame,
+                    child: const Text('Start Game'),
+                  ),
+                ],
+              ),
+            ),
         ],
       ),
     );
