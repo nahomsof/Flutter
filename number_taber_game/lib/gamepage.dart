@@ -62,6 +62,16 @@ class _GamePageState extends State<GamePage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      Text(
+                        'Highest Score: ${value.highestscore}', // Display the highest score
+                        style: const TextStyle(
+                            color: Colors.grey,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      ),
                       const SizedBox(height: 100),
                       ElevatedButton(
                         onPressed: () => value.startGame(context),

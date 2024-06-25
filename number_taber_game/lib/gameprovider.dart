@@ -7,6 +7,7 @@ class GameProvider with ChangeNotifier {
   late Timer timer;
   int timelft = 10;
   int current_number = 1;
+  int highestscore = 0;
   int score = 0;
   bool isGameActive = false;
   Offset _buttonPosition = Offset.zero;
@@ -14,6 +15,7 @@ class GameProvider with ChangeNotifier {
   int get timeLeft => timelft;
   int get currentNumber => current_number;
   int get scorer => score;
+  int get highscore => highestscore;
   bool get isGameActived => isGameActive;
   Offset get buttonPosition => _buttonPosition;
 
@@ -21,6 +23,7 @@ class GameProvider with ChangeNotifier {
     timelft = 10;
     current_number = 1;
     score = 0;
+
     isGameActive = true;
     rdmPosition(context);
 
@@ -28,6 +31,11 @@ class GameProvider with ChangeNotifier {
       if (timelft == 0) {
         timer.cancel();
         isGameActive = false;
+
+        //to display the highest score
+        if (score > highestscore) {
+          highestscore = score;
+        }
       } else {
         timelft--;
       }
