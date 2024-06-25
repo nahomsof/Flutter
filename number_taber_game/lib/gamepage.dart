@@ -11,14 +11,27 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
-  int timelft = 10;
   late Timer timer;
-  int score = 0;
+  int timelft = 10;
+  bool isGameActive = false;
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
+
   void _startGame() {
-    setState(() {});
+    setState(() {
+      timelft = 10;
+      isGameActive = true;
+    });
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (timelft == 0) {
         timer.cancel();
+        setState(() {
+          isGameActive = false;
+        });
       } else {
         setState(() {
           timelft--;
