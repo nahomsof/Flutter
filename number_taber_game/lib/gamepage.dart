@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -84,11 +83,15 @@ class _GamePageState extends State<GamePage> {
                 ),
                 if (isGameActive)
                   Positioned(
+                    left: _buttonPosition.dx,
+                    top: _buttonPosition.dy,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(), backgroundColor: Colors.white),
                       onPressed: _onButtonTap,
                       child: Text(
                         '$current_number',
-                        style: TextStyle(color: Colors.red, fontSize: 10),
+                        style: TextStyle(color: Colors.black, fontSize: 25),
                       ),
                     ),
                   ),
