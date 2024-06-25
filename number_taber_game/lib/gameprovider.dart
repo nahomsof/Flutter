@@ -35,6 +35,7 @@ class GameProvider with ChangeNotifier {
     });
   }
 
+  //method for radome position
   void rdmPosition(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final x = _random.nextDouble() * (size.width - 100);
