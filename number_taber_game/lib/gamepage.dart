@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:ffi';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -11,10 +12,12 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
+  final Random _random = Random();
   late Timer timer;
   int current_number = 1;
   int timelft = 10;
   bool isGameActive = false;
+  Offset _buttonPosition = Offset.zero;
 
   @override
   void dispose() {
@@ -25,7 +28,9 @@ class _GamePageState extends State<GamePage> {
   void _startGame() {
     setState(() {
       timelft = 10;
+      current_number = 1;
       isGameActive = true;
+      rdmPosition();
     });
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (timelft == 0) {
@@ -41,9 +46,19 @@ class _GamePageState extends State<GamePage> {
     });
   }
 
+  void rdmPosition() {
+    final size = MediaQuery.of(context).size;
+    final x = _random.nextDouble() * (size.width - 100);
+    final y = _random.nextDouble() * (size.height - 100);
+    setState(() {
+      _buttonPosition = Offset(x, y);
+    });
+  }
+
   void _onButtonTap() {
     setState(() {
       current_number++;
+      rdmPosition();
     });
   }
 
@@ -77,11 +92,18 @@ class _GamePageState extends State<GamePage> {
                       ),
                     ),
                   ),
-                Center(
-                    child: ElevatedButton(
-                  onPressed: _startGame,
-                  child: const Text('Start Game'),
-                ))
+                if (!isGameActive)
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ElevatedButton(
+                          onPressed: _startGame,
+                          child: const Text('Start Game'),
+                        ),
+                      ],
+                    ),
+                  ),
               ],
             ),
           ),
