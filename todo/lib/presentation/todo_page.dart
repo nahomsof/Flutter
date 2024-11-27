@@ -13,7 +13,7 @@ class TodoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => TodoCubit(todoRepo),
-      child: const TodoView(),
+      child:  const TodoView(),
     );
   }
 }
