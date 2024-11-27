@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:todo/home_page.dart';
+import 'package:todo/presentation/todo_view.dart';
 
 void main() async {
-  //init the hive
-  await Hive.initFlutter();
-// open the box
-  var box = await Hive.openBox('mybox');
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: TodoView(),
     );
   }
 }
